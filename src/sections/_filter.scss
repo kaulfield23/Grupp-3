@@ -1,18 +1,65 @@
-.filterClass{
-    display: flex;
-    justify-content: center;
-    padding-top:40px;
-    
-  .filter{
-     padding-top:7px;
-     text-align: center;
-     box-sizing: border-box;
-     width: 140px;
-     height: 40px;
-     text-decoration: none;
-     color:rgb(99, 97, 212);
-     border-style: solid;
-     border-color: rgb(136, 139, 160);
-     border-radius: 5px;
-    }
+#ourChallenges{
+  margin-top:80px;
+  text-align: center;
+  font-size:35px;
 }
+.filterClass {
+  
+  #filterBtnCenter{
+    @include flexCenter;
+  }
+  padding-top: 40px;
+  .filterBtn {
+    @include filterBtnStyle;
+  }
+  .filter {
+    display: none;
+    border:2px solid lightgray;
+    padding:30px;
+    position:relative;
+    margin:20px;
+  }
+  .threeTypes {
+    display: flex;
+    justify-content: space-between;
+    margin-top:50px;
+    .byTags {
+      .tags {
+        margin:5px;
+        border-radius: 10px;
+        border: 2px solid lightgray;
+        padding: 5px;
+        color: grey;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover {
+          color:black;
+        }
+      }
+      .tagSelected{
+        background-color: darkslateblue;
+      }
+    }
+    
+    .showSelectedTag{
+      display:flex;
+      justify-content: center;
+    }
+  }
+  .keyword{
+    margin-top:50px;
+    text-align: center;
+    p{
+      margin-bottom:30px;
+    }
+  }
+  .closeBtn{
+    position:absolute;
+    right:15px;
+    top:10px;
+    font-size:35px;
+    cursor: pointer;
+    color:gray;
+  }
+}
+
