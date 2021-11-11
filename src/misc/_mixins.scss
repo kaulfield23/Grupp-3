@@ -6,10 +6,6 @@
   }
 }
 
-@function brightness($color) {
-  @return math.div(((red($color) * .299) + (green($color) * .587) + (blue($color) * .114)), 255) * 100%;
-}
-
 @mixin button($bg-color) {
   display: block;
   margin: 0.5rem;
@@ -21,10 +17,6 @@
   font-size: 1.2rem;
   font-weight: bold;
   transition: background-color 0.2s;
-
-  @if brightness($bg-color) < 50 {
-    color: white;
-  }
 
   &:hover {
     background-color: darken($bg-color, 5);

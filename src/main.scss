@@ -1,4 +1,4 @@
-@import 'misc/variables';
+@import 'misc/_values.scss';
 @import 'misc/reset';
 @import 'misc/mixins';
 
@@ -10,3 +10,4 @@
 @import 'sections/story';
 @import 'sections/usps';
 @import 'sections/footer';
+@import 'sections/filter';
