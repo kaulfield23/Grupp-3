@@ -1,12 +1,7 @@
 .challenges {
     overflow: hidden;
   
-    h2 {
-      font-size: 1.7rem;
-      font-weight: normal;
-      text-align: center;
-      margin: 0 0 1rem;
-    }
+
   }
   
   .challenges-list {
@@ -87,3 +82,5 @@
     @include challenge-ctas;
     margin: 2rem 0;
   }
+
+ 
