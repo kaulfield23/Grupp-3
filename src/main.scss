@@ -1,4 +1,4 @@
-html{
+html {
     font-family: 'Roboto';
     user-select: none;
 }
@@ -6,10 +6,9 @@ html{
 @import 'misc/_values.scss';
 @import 'misc/reset';
 @import 'misc/mixins';
-
 @import 'sections/header';
 @import 'sections/nav';
-
 @import 'sections/challenges';
 @import 'sections/footer';
 @import 'sections/filter';
+@import 'sections/bookingModal';
