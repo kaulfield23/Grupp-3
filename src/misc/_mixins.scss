@@ -65,3 +65,21 @@
     color: $c-lightblue;
   }
 }
+
+@mixin flexCenter{
+  display:flex;
+  justify-content: center;
+}
+
+@mixin filterBtnStyle{
+  padding-top: 7px;
+    text-align: center;
+    box-sizing: border-box;
+    width: 140px;
+    height: 40px;
+    text-decoration: none;
+    color: rgb(99, 97, 212);
+    border-style: solid;
+    border-color: rgb(136, 139, 160);
+    border-radius: 5px;
+}

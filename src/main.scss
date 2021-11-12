@@ -1,13 +1,16 @@
+html{
+    max-width:1280px;
+    margin:0 auto;
+    font-family: 'Roboto';
+}
+
 @import 'misc/_values.scss';
 @import 'misc/reset';
 @import 'misc/mixins';
 
 @import 'sections/header';
 @import 'sections/nav';
-@import 'sections/hero';
-@import 'sections/testimonials';
+
 @import 'sections/challenges';
-@import 'sections/story';
-@import 'sections/usps';
 @import 'sections/footer';
 @import 'sections/filter';
