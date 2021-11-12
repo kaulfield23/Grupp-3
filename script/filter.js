@@ -1,6 +1,6 @@
+const filter = document.querySelector(".filter");
+const filterBtn = document.querySelector(".filterBtn");
 const showAndCloseFilter = (event) => {
-  const filter = document.querySelector(".filter");
-  const filterBtn = document.querySelector(".filterBtn");
   if (event.target.classList.contains("filterBtn")) {
     filterBtn.style.display = "none";
     filter.style.display = "block";
@@ -9,11 +9,14 @@ const showAndCloseFilter = (event) => {
     filterBtn.style.display = "block";
   }
 };
-
+const hideFilter = () => {
+  filter.style.display === "none"
+    ? (filterBtn.style.display = "block")
+    : (filter.style.display = "none");
+};
+//make random card in cards
 let cards = [];
 let count = 0;
-
-//make random card in cards
 for (let i = 0; i < 10; i++) {
   if (count == 6) {
     count = 0;
