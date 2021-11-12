@@ -24,8 +24,8 @@ for (let i = 0; i < challengesList.length; i++) {
 function changeBtn(){
 
 let challengeBtn = document.getElementById(".challenge-cta");
-if(changeBtn.value == "online") changeBtn.Btn = "Take challenge online";
-else changeBtn.value = "Book this room";
+if(challengeBtn.value == "online") changeBtn.Btn = "Take challenge online";
+else challengeBtn.value = "Book this room";
 
 
 }
