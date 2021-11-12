@@ -52,12 +52,16 @@
         width: 1rem;
         height: 1rem;
         margin: 0 0.4rem 0 0;
+
         background-image: url("/images/star-on.png");
+
         background-size: contain;
         background-repeat: no-repeat;
   
         &.off {
+
           background-image: url("/images/star-off.png");
+
         }
       }
     }
