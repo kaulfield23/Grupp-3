@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="/src/main.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/07a95dbd5e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/src/main.css">
   </head>
   <body>
 
@@ -11,7 +16,7 @@
       <h1 class="logo">Hacker Escape Rooms</h1>
     </header>
     <nav class="main-nav">
-      <a class="main-nav-toggle"></a>
+      <a class="main-nav-toggle" onclick="hideFilter()"></a>
       <ul class="main-menu">
         <li><a href="#">Play online</a></li>
         <li><a href="#">Play on-site</a></li>
@@ -21,10 +26,46 @@
     </nav>
   
     <!--filter-prop-->
-    <h2>Our challenges</h2>
-    <section class = "filterClass">
-      <a href="link" class ="filter">Filter challenges</a>
-    </section>
+    <h2 id="ourChallenges">Our challenges</h2>
+
+  <section class="filterClass">
+    <div id="filterBtnCenter">
+      <a href="#" class="filterBtn" onclick="showAndCloseFilter(event)">Filter challenges</a>
+    </div>
+    <div class="filter">
+      <h2>Filter challenges</h2>
+      <i class="fas fa-times closeBtn" onclick="showAndCloseFilter(event)"></i>
+      <div class="threeTypes">
+        <div class="byType">
+          <div>
+            <input type="checkbox" name="checkOnline" id="checkOnline" onclick="onClickCheckbox(event)">
+            <label for="checkOnline">Include online challenges</label>
+          </div>
+          <div>
+            <input type="checkbox" name="checkOnSite" id="checkOnSite" onclick="onClickCheckbox(event)">
+            <label for="checkOnSite">Include on-site challenges</label>
+          </div>
+          <div class="showResult"></div>
+        </div>
+        <div class="byRating">
+          starts to starts
+        </div>
+        <div class="byTags">
+          <button class="tags" onclick="filterTags(event)">Web</button>
+          <button class="tags" onclick="filterTags(event)">Linux</button>
+          <button class="tags" onclick="filterTags(event)">Cryptography</button>
+          <button class="tags" onclick="filterTags(event)">Coding</button>
+          <button class="tags" onclick="filterTags(event)">Some other tag</button>
+          <button class="tags" onclick="filterTags(event)">A final tag</button>
+        </div>
+      </div>
+      <span class="showSelectedTags"></span>
+      <div class="keyword">
+        <p>Or type to search for keyword</p>
+        <input type="text">
+      </div>
+    </div>
+  </section>
 
     <!--challenge-cards-->
     <section class="challenges">
@@ -133,7 +174,7 @@
       document.querySelector('.main-nav').classList.toggle('open');
     });
   </script>
-  
+  <script src="./script/script.js"></script>
   <script src="./script/filter.js"></script>
 </body>
 
