@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -30,7 +30,7 @@
     <!--filter-prop-->
     <h2 id="ourChallenges">Our challenges</h2>
 
-  <section class="filterClass">
+  <!--<section class="filterClass">
     <div id="filterBtnCenter">
       <a href="#" class="filterBtn" onclick="showAndCloseFilter(event)">Filter challenges</a>
     </div>
@@ -67,11 +67,12 @@
         <input type="text">
       </div>
     </div>
-  </section>
+  </section>-->
 
     <!--challenge-cards-->
     
     <section class="challenges">
+      <div class="challenge-all">
       <div class = "challenges-type"></div>
       <div class = "challenges-lable"></div>
       <ul class="challenges-list">
@@ -86,9 +87,10 @@
               <li class="challenge-rating-star on"></li>
               <li class="challenge-rating-star off"></li>
             </ul>
-            <small class="minParticipants"></small>
-            <small class="maxParticipants"></small>
+            <small class="minParticipants">"" -</small>
+            <small class="maxParticipants">""</small>
           </div>
+        
           <p class="challenge-description">
             Reprehenderit voluptate ullamco pariatur labore cupidatat
             consectetur est adipisicing enim. Deserunt sit irure consequat
@@ -97,6 +99,7 @@
           <a class="challenge-cta" href="#">Book this room</a>
         </li>
       </ul>
+    </div>
     </section>
     
     <!--footer-->
