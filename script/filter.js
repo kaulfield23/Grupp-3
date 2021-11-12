@@ -53,23 +53,29 @@ const onClickCheckbox = (event) => {
 
   //chceck if the box is checked and which value it has.
   if (eventId === "checkOnline" && boxIsChecked) {
-    filteredItem = cards.filter((item) => item.challenge === "online");
-    for (item of filteredItem) {
-      let span = document.createElement("span");
-      span.innerHTML = JSON.stringify(item.challenge) + "<br>";
-      showResult.appendChild(span);
-    }
+    filteredTag.push("online");
+    // filteredItem = cards.filter((item) => item.challenge === "online");
+    // for (item of filteredItem) {
+    //   let span = document.createElement("span");
+    //   span.innerHTML = JSON.stringify(item.challenge) + "<br>";
+    //   showResult.appendChild(span);
+    // }
   } else if (eventId === "checkOnSite" && boxIsChecked) {
-    filteredItem = cards.filter((item) => item.challenge === "on-site");
-    for (item of filteredItem) {
-      let span = document.createElement("span");
-      span.innerHTML = JSON.stringify(item.challenge) + "<br>";
-      showResult.appendChild(span);
-    }
+    filteredTag.push("on-site");
+    // filteredItem = cards.filter((item) => item.challenge === "on-site");
+    // for (item of filteredItem) {
+    //   let span = document.createElement("span");
+    //   span.innerHTML = JSON.stringify(item.challenge) + "<br>";
+    //   showResult.appendChild(span);
+    // }
   } else {
     //when box is unchecked, then it will remove texts in html
+    event.target.id === "checkOnline"
+      ? filteredTag.splice(filteredTag.indexOf("online"), 1)
+      : filteredTag.splice(filteredTag.indexOf("on-site"), 1);
     showResult.textContent = "";
   }
+  console.log(filteredTag);
 };
 
 //show only selected tags in html
