@@ -1,5 +1,6 @@
 .main-nav {
     $animation-duration: 0.3s;
+    padding-bottom: 20px;
   
     @mixin burger-line {
       display: block;
@@ -8,10 +9,13 @@
       border-radius: 0.15rem;
       background-color: white;
       cursor: pointer;
+
     }
   
     .main-menu {
       display: none;
+     
+     
     }
   
     .main-nav-toggle {
@@ -19,6 +23,7 @@
       top: 1rem;
       right: 1rem;
       z-index: 2;
+     
   
       $trans-duration: 0.5s;
   
@@ -49,6 +54,7 @@
     .main-menu {
       z-index: 1;
       background-color: $c-darkblue;
+     
     }
   
     @media screen and (max-width: $bp-desktop) {

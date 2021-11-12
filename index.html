@@ -19,7 +19,9 @@
         <li><a href="#">Contact us</a></li>
       </ul>
     </nav>
-  
+
+    
+    
     <!--filter-prop-->
     <h2>Our challenges</h2>
     <section class = "filterClass">
@@ -27,10 +29,13 @@
     </section>
 
     <!--challenge-cards-->
+    
     <section class="challenges">
+      <div class = "challenges-type"></div>
+      <div class = "challenges-lable"></div>
       <ul class="challenges-list">
         <li class="challenges-item">
-          <img class="challenge-picture" src="images/challenge.png" />
+          <img class="challenge-picture" src="https://placekitten.com/640/480" />
           <h3 class="challenge-title">Title of room (on-site)</h3>
           <div class="challenge-meta">
             <ul class="challenge-rating">
@@ -40,7 +45,8 @@
               <li class="challenge-rating-star on"></li>
               <li class="challenge-rating-star off"></li>
             </ul>
-            <small class="challenge-size">2-6 participants</small>
+            <small class="minParticipants"></small>
+            <small class="maxParticipants"></small>
           </div>
           <p class="challenge-description">
             Reprehenderit voluptate ullamco pariatur labore cupidatat
@@ -64,7 +70,7 @@
         </div>
         <!--second-->
         <div class="footer-sitemap">
-          <h2>Site map</h2>
+          <h2 class="site">Site map</h2>
           <ul>
             <li><a href="#">The Story</a></li>
             <li><a href="#">Contact Us</a></li>
@@ -77,65 +83,27 @@
         </div>
         <!--third-->
         <div class="footer-social">
-          <h2>Follow us on</h2>
+          <h2 class="follow">Follow us on</h2>
           <ul>
             <li><a href="#">Facebook</a></li>
             <li><a href="#">Instagram</a></li>
             <li><a href="#">Twitter</a></li>
-
           </ul>
-          <small class="challenge-size">2-6 participants</small>
         </div>
-        <p class="challenge-description">
-          Reprehenderit voluptate ullamco pariatur labore cupidatat
-          consectetur est adipisicing enim. Deserunt sit irure consequat
-          consequat elit aliquip eiusmod aliquip et ipsum ipsum.
-        </p>
-        <a class="challenge-cta" href="#">Book this room</a>
       </li>
     </ul>
-  </section>
+    </section>
+   </footer>
 
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-summary">
-        <h2>[Esc] Hacker Escape Rooms</h2>
-        <p>
-          Esse ipsum tempor deserunt duis magna amet et mollit ea. Consectetur et labore cillum consectetur aliquip non
-          consectetur dolore et Lorem aliquip minim. Magna ullamco voluptate do magna enim esse cupidatat ipsum culpa
-          enim ut aliqua. Proident eu labore duis id consequat ipsum occaecat adipisicing nostrud.
-        </p>
-      </div>
-      <div class="footer-sitemap">
-        <h2>Site map</h2>
-        <ul>
-          <li><a href="#">The Story</a></li>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">Legal</a></li>
-        </ul>
-        <ul>
-          <li><a href="#">Play online</a></li>
-          <li><a href="#">Play on-site</a></li>
-        </ul>
-      </div>
-      <div class="footer-social">
-        <h2>Follow us on</h2>
-        <ul>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Twitter</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-  <script>
+    <script>
     document.querySelector('.main-nav-toggle').addEventListener('click', () => {
       document.querySelector('.main-nav').classList.toggle('open');
     });
-  </script>
+    </script>
   
-  <script src="./script/filter.js"></script>
-</body>
+    <script src="./script/script.js"></script>
+    <script src="./script/filter.js"></script>
+  </body>
 
 
 </html>
