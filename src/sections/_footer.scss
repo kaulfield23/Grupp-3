@@ -4,7 +4,9 @@
     padding: 5rem 0;
   
     .footer-content {
-      margin: 0 1rem;
+      display: flex;
+      justify-content: center;
+     
   
       & > div {
         margin: 0 0 2rem;
@@ -14,6 +16,9 @@
     h2 {
       font-size: 1rem;
       margin-bottom: 0.3rem;
+      padding-left:10px ;
+      position: relative;
+      right: 170px;
     }
   
     ul {
@@ -24,6 +29,11 @@
       @include menu-link;
     }
   
+    .site, .follow{
+      position: relative;
+      right: 80px;
+    }
+
     @include desktop {
       margin-top: 10rem;
   
@@ -35,7 +45,7 @@
         grid-template-columns: repeat(12, 1fr);
   
         .footer-summary {
-          grid-column: 2 / 6;
+          grid-column: 1 / 6;
         }
   
         .footer-sitemap {
