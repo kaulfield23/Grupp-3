@@ -2,6 +2,7 @@ html{
     max-width:1280px;
     margin:0 auto;
     font-family: 'Roboto';
+    user-select: none;
 }
 
 @import 'misc/_values.scss';
