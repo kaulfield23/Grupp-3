@@ -11,7 +11,8 @@ function cardCopy(){
 }
 cardCopy();
 
-//Change Elements TEST
+//Download the data TEST}
+
 let challengesList = document.querySelectorAll(".challenges-list");
 for (let i = 0; i < challengesList.length; i++) {
   challengesList[i].querySelector("h3").innerText = `Title${i}`;
@@ -21,11 +22,13 @@ for (let i = 0; i < challengesList.length; i++) {
 };
 
 //change buttons depending on property TEST
-function changeBtn(){
+/*function changeBtn(){
 
 let challengeBtn = document.getElementById(".challenge-cta");
 if(challengeBtn.value == "online") changeBtn.Btn = "Take challenge online";
 else challengeBtn.value = "Book this room";
 
+}*/
 
-}
+
+
