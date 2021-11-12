@@ -1,18 +1,28 @@
+h2 {
+  font-size: 40px;
+  font-weight: normal;
+  text-align: center;
+  margin-top:80px;
+}
+
 .filterClass{
     display: flex;
     justify-content: center;
     padding-top:40px;
     
+    
   .filter{
-     padding-top:7px;
+     padding-top:10px;
      text-align: center;
      box-sizing: border-box;
      width: 140px;
      height: 40px;
      text-decoration: none;
-     color:rgb(99, 97, 212);
-     border-style: solid;
-     border-color: rgb(136, 139, 160);
+     color:rgb(250, 249, 249);
+     font-size: 16px;
+     font-weight: bold;
+     background-color: $c-red;
      border-radius: 5px;
+    margin-bottom: 50px;     
     }
 }
