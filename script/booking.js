@@ -38,4 +38,4 @@ function triggerBooking(event) {
     }
 }
 
-//Notes: users input, compare with title description. If exists return it.
+//Notes: users input, compare with title description. If exists return it.*/
