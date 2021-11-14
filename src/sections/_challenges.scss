@@ -15,6 +15,7 @@
   .challenges-list {
     display: flex;
     width: 450px;
+    height: 613px;
     @include desktop {
       
       justify-content: center;
@@ -29,7 +30,7 @@
     box-shadow: 0 0 1rem rgba($c-beige, 10);
     margin: 1rem;
     overflow: hidden;
-    max-width: 85vw;
+    max-height: 600px;
   
     & > *:not(img) {
       margin: 0 1rem;
