@@ -1,0 +1,152 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/07a95dbd5e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/src/main.css">
+  </head>
+  <body>
+
+    <!--header-->
+    <header class="header">
+      <h1 class="logo">Hacker Escape Rooms</h1>
+    </header>
+    <nav class="main-nav">
+      <a class="main-nav-toggle" onclick="hideFilter()"></a>
+      <ul class="main-menu">
+        <li><a href="#">Play online</a></li>
+        <li><a href="#">Play on-site</a></li>
+        <li><a href="#">The story</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </nav>
+
+    
+    
+    <!--filter-prop-->
+    <h2 id="ourChallenges">Our challenges</h2>
+
+  <!--<section class="filterClass">
+    <div id="filterBtnCenter">
+      <a href="#" class="filterBtn" onclick="showAndCloseFilter(event)">Filter challenges</a>
+    </div>
+    <div class="filter">
+      <h2>Filter challenges</h2>
+      <i class="fas fa-times closeBtn" onclick="showAndCloseFilter(event)"></i>
+      <div class="threeTypes">
+        <div class="byType">
+          <div>
+            <input type="checkbox" name="checkOnline" id="checkOnline" onclick="onClickCheckbox(event)">
+            <label for="checkOnline">Include online challenges</label>
+          </div>
+          <div>
+            <input type="checkbox" name="checkOnSite" id="checkOnSite" onclick="onClickCheckbox(event)">
+            <label for="checkOnSite">Include on-site challenges</label>
+          </div>
+          <div class="showResult"></div>
+        </div>
+        <div class="byRating">
+          starts to starts
+        </div>
+        <div class="byTags">
+          <button class="tags" onclick="filterTags(event)">Web</button>
+          <button class="tags" onclick="filterTags(event)">Linux</button>
+          <button class="tags" onclick="filterTags(event)">Cryptography</button>
+          <button class="tags" onclick="filterTags(event)">Coding</button>
+          <button class="tags" onclick="filterTags(event)">Some other tag</button>
+          <button class="tags" onclick="filterTags(event)">A final tag</button>
+        </div>
+      </div>
+      <span class="showSelectedTags"></span>
+      <div class="keyword">
+        <p>Or type to search for keyword</p>
+        <input type="text">
+      </div>
+    </div>
+  </section>-->
+
+    <!--challenge-cards-->
+    
+    <section class="challenges">
+      <div class="challenge-all">
+      <div class = "challenges-type"></div>
+      <div class = "challenges-lable"></div>
+      <ul class="challenges-list">
+        <li class="challenges-item">
+          <img class="challenge-picture" src="https://placekitten.com/640/480" />
+          <h3 class="challenge-title">Title of room (on-site)</h3>
+          <div class="challenge-meta">
+            <ul class="challenge-rating">
+              <li class="challenge-rating-star on"></li>
+              <li class="challenge-rating-star on"></li>
+              <li class="challenge-rating-star on"></li>
+              <li class="challenge-rating-star on"></li>
+              <li class="challenge-rating-star off"></li>
+            </ul>
+            <small class="minParticipants">"" -</small>
+            <small class="maxParticipants">""</small>
+          </div>
+        
+          <p class="challenge-description">
+            Reprehenderit voluptate ullamco pariatur labore cupidatat
+            consectetur est adipisicing enim. Deserunt sit irure consequat
+            consequat elit aliquip eiusmod aliquip et ipsum ipsum.
+          </p>
+          <a class="challenge-cta" href="#">Book this room</a>
+        </li>
+      </ul>
+    </div>
+    </section>
+    
+    <!--footer-->
+    <!--first-->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-summary">
+          <h2>[Esc] Hacker Escape Rooms</h2>
+          <p>
+            Esse ipsum tempor deserunt duis magna amet et mollit ea. Consectetur et labore cillum consectetur aliquip non consectetur dolore et Lorem aliquip minim. Magna ullamco voluptate do magna enim esse cupidatat ipsum culpa enim ut aliqua. Proident eu labore duis id consequat ipsum occaecat adipisicing nostrud.
+          </p>
+        </div>
+        <!--second-->
+        <div class="footer-sitemap">
+          <h2 class="site">Site map</h2>
+          <ul>
+            <li><a href="#">The Story</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Legal</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">Play online</a></li>
+            <li><a href="#">Play on-site</a></li>
+          </ul>
+        </div>
+        <!--third-->
+        <div class="footer-social">
+          <h2 class="follow">Follow us on</h2>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    </section>
+   </footer>
+
+    <script>
+    document.querySelector('.main-nav-toggle').addEventListener('click', () => {
+      document.querySelector('.main-nav').classList.toggle('open');
+    });
+
+  </script>
+  <script src="./script/script.js"></script>
+  <script src="./script/filter.js"></script>
+</body>
+ 
+</html>
