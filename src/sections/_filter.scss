@@ -39,6 +39,15 @@
         background-color: darkslateblue;
       }
     }
+    .byRating{
+      .star{
+        color:purple;
+        cursor:pointer;
+        &:hover{
+          color:palevioletred;
+        }
+      }
+    }
     
     .showSelectedTag{
       display:flex;

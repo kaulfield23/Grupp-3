@@ -78,26 +78,6 @@
 
     <!--filter-prop-->
     <h2 id="ourChallenges">Our challenges</h2>
-
-  <section class="filterClass">
-    <div id="filterBtnCenter">
-      <a href="#" class="filterBtn" onclick="showAndCloseFilter(event)">Filter challenges</a>
-    </div>
-    <div class="filter">
-      <h2>Filter challenges</h2>
-      <i class="fas fa-times closeBtn" onclick="showAndCloseFilter(event)"></i>
-      <div class="threeTypes">
-        <div class="byType">
-          <div>
-            <input type="checkbox" name="checkOnline" id="checkOnline" onclick="onClickCheckbox(event)">
-            <label for="checkOnline">Include online challenges</label>
-          </div>
-          <div>
-            <input type="checkbox" name="checkOnSite" id="checkOnSite" onclick="onClickCheckbox(event)">
-            <label for="checkOnSite">Include on-site challenges</label>
-          </div>
-          <div class="showResult"></div>
-
     <section class="filterClass">
         <div id="filterBtnCenter">
             <a href="#" class="filterBtn" onclick="showAndCloseFilter(event)">Filter challenges</a>
@@ -109,50 +89,39 @@
             <div class="threeTypes">
                 <div class="byType">
                     <div>
-                        <input type="checkbox" name="checkOnline" id="checkOnline" onclick="onClickCheckbox(event)">
-                        <label for="checkOnline">Include online challenges</label>
+                        <input type="checkbox" name="online" id="online" onclick="onClickCheckbox(event)">
+                        <label for="online">Include online challenges</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="checkOnSite" id="checkOnSite" onclick="onClickCheckbox(event)">
-                        <label for="checkOnSite">Include on-site challenges</label>
+                        <input type="checkbox" name="onsite" id="onsite" onclick="onClickCheckbox(event)">
+                        <label for="onsite">Include on-site challenges</label>
                     </div>
                     <div class="showResult"></div>
                 </div>
                 <div class="byRating">
-                    starts to starts
+                    <i class="far fa-star star 1" id=1 onclick="ratingFilter1(event)"></i>
+                    <i class="far fa-star star 2" id=2 onclick="ratingFilter1(event)"></i>
+                    <i class="far fa-star star 3" id=3 onclick="ratingFilter1(event)"></i>
+                    <i class="far fa-star star 4" id=4 onclick="ratingFilter1(event)"></i>
+                    <i class="far fa-star star 5" id=5 onclick="ratingFilter1(event)"></i>
+                    to
+                    <i class="fas fa-star star" id=6 onclick="ratingFilter2(event)"></i>
+                    <i class="fas fa-star star" id=7 onclick="ratingFilter2(event)"></i>
+                    <i class="fas fa-star star" id=8 onclick="ratingFilter2(event)"></i>
+                    <i class="fas fa-star star" id=9 onclick="ratingFilter2(event)"></i>
+                    <i class="fas fa-star star" id=10 onclick="ratingFilter2(event)"></i>
                 </div>
                 <div class="byTags">
-                    <button class="tags" onclick="filterTags(event)">Web</button>
-                    <button class="tags" onclick="filterTags(event)">Linux</button>
-                    <button class="tags" onclick="filterTags(event)">Cryptography</button>
-                    <button class="tags" onclick="filterTags(event)">Coding</button>
-                    <button class="tags" onclick="filterTags(event)">Some other tag</button>
-                    <button class="tags" onclick="filterTags(event)">A final tag</button>
                 </div>
             </div>
-            <span class="showSelectedTags"></span>
             <div class="keyword">
                 <p>Or type to search for keyword</p>
                 <input type="text">
             </div>
         </div>
-
-        <div class="byTags">
-          <button class="tags" onclick="filterTags(event)">Web</button>
-          <button class="tags" onclick="filterTags(event)">Linux</button>
-          <button class="tags" onclick="filterTags(event)">Cryptography</button>
-          <button class="tags" onclick="filterTags(event)">Coding</button>
-          <button class="tags" onclick="filterTags(event)">Some other tag</button>
-          <button class="tags" onclick="filterTags(event)">A final tag</button>
-        </div>
-      </div>
-      <span class="showSelectedTags"></span>
-      <div class="keyword">
-        <p>Or type to search for keyword</p>
-        <input type="text">
-      </div>
+    </section>
+    <div class="showSelectedTags">
     </div>
-  </section>
     <!--challenge-cards-->
 
     <section class="challenges">
