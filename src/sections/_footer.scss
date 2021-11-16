@@ -16,9 +16,9 @@
     h2 {
       font-size: 1rem;
       margin-bottom: 0.3rem;
-      padding-left:10px ;
+      padding-left:0px ;
       position: relative;
-      right: 170px;
+      right: 0px;
     }
   
     ul {
@@ -35,7 +35,7 @@
     }
 
     @include desktop {
-      margin-top: 10rem;
+      margin-top: 10rem;]
   
       .footer-content {
         display: grid;

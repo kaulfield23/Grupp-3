@@ -5,7 +5,6 @@
     justify-content: center;
 
   }
-  
   .challenges-type{
     display: none;
   }
@@ -51,6 +50,16 @@
       }
     }
   
+    .participants{
+      font-size: 30px;
+      color: rebeccapurple;
+    }
+
+
+    .minParticipants{
+      font-size: 200px;
+    }
+
     .challenge-rating {
       display: flex;
       margin: 0 1rem 0 0;
