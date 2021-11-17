@@ -9,6 +9,7 @@ const showAndCloseFilter = (event) => {
   } else {
     filter.style.display = "none";
     filterBtn.style.display = "block";
+    printFilteredCard('close');
   }
 };
 //when you open the nav menu, then it hides filter
