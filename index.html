@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -103,8 +103,7 @@
                     <i class="far fa-star star 2" id=2 onclick="giveStarAndGetNumbers(event)"></i>
                     <i class="far fa-star star 3" id=3 onclick="giveStarAndGetNumbers(event)"></i>
                     <i class="far fa-star star 4" id=4 onclick="giveStarAndGetNumbers(event)"></i>
-                    <i class="far fa-star star 5" id=5 onclick="giveStarAndGetNumbers(event)"></i>
-                    to
+                    <i class="far fa-star star 5" id=5 onclick="giveStarAndGetNumbers(event)"></i> to
                     <i class="fas fa-star star" id=6 onclick="giveStarAndGetNumbers(event)"></i>
                     <i class="fas fa-star star" id=7 onclick="giveStarAndGetNumbers(event)"></i>
                     <i class="fas fa-star star" id=8 onclick="giveStarAndGetNumbers(event)"></i>
@@ -116,7 +115,7 @@
             </div>
             <div class="keyword">
                 <p>Or type to search for keyword</p>
-                <input type="text">
+                <input type="text" id="inputSearch">
             </div>
         </div>
     </section>
@@ -124,25 +123,25 @@
     </div>
     <!--challenge-cards-->
     <section class="challenges">
-      <div class="challenge-all">
-        <div class="challenges-type"></div>
-        <div class="challenges-lable"></div>
-        <ul class="challenges-list">
-            <li class="challenges-item">
-                <img class="challenge-picture" src="https://placekitten.com/640/480" />
-                <h3 class="challenge-title">FULTKORT</h3>
-                <div class="challenge-meta">
-                    <ul class="challenge-rating"></ul>
-                    <div class="participants">
-                    <small class="minParticipants"></small>
-                    <small class="maxParticipants"></small>
+        <div class="challenge-all">
+            <div class="challenges-type"></div>
+            <div class="challenges-lable"></div>
+            <ul class="challenges-list">
+                <li class="challenges-item">
+                    <img class="challenge-picture" src="https://placekitten.com/640/480" />
+                    <h3 class="challenge-title">FULTKORT</h3>
+                    <div class="challenge-meta">
+                        <ul class="challenge-rating"></ul>
+                        <div class="participants">
+                            <small class="minParticipants"></small>
+                            <small class="maxParticipants"></small>
+                        </div>
                     </div>
-                </div>
-                <p class="challenge-description"></p>
-                <a class="challenge-cta" href="#" onclick="triggerBooking(event)">Book this room</a>
-            </li>
-        </ul>
-    </div>
+                    <p class="challenge-description"></p>
+                    <a class="challenge-cta" href="#" onclick="triggerBooking(event)">Book this room</a>
+                </li>
+            </ul>
+        </div>
     </section>
 
     <!--footer-->
@@ -189,11 +188,12 @@
         });
     </script>
     <script src="./script/script.js"></script>
-    <script src ="./script/filterFiles/filterCheckbox.js"></script>
-    <script src ="./script/filterFiles/filterShowAndClose.js"></script>
-    <script src ="./script/filterFiles/filterTag.js"></script>
+    <script src="./script/filterFiles/filterCheckbox.js"></script>
+    <script src="./script/filterFiles/filterShowAndClose.js"></script>
+    <script src="./script/filterFiles/filterTag.js"></script>
     <script src="./script/filterFiles/filterRate.js"></script>
     <script src="./script/filterFiles/printFilteredCard.js"></script>
+    <script src="./script/filterFiles/filterInput.js"></script>
 
 
 
