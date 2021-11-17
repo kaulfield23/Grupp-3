@@ -74,27 +74,30 @@ const changeStar = (num, bpNum) => {
     star.setAttribute("class", "fas fa-star");
     star.setAttribute("onlick", "ratingFilter1(event)");
     star.style.color = "purple";
+    star.style.cursor = "pointer";
   }
   for (let i = bpNum; i < max; i++) {
     let star = document.getElementById(`${i + 1}`);
     star.setAttribute("class", "far fa-star");
     star.style.color = "purple";
+    star.style.cursor = "pointer";
+
   }
 };
 
-let min = 0;
-let max;
-let rate = {};
+let min;
+let max =5;
+let rate = { min : 0, max:5};
 const filterRate = (num) => {
   num > 5 ? (max = num - 5) : (min = num);
   rate.min = min;
   rate.max = max;
+  console.log(rate)
 
-  let item = JSON.parse(JSON.stringify(cards));
-  console.log(rate);
-  let filteredRate = item.filter(
-    (card) => rate.min <= card.rating && card.rating <= rate.max
-  );
+  // let item = JSON.parse(JSON.stringify(cards));
+  // console.log(rate);
+  // let filteredRate = item.filter(
+  //   (card) => rate.min <= card.rating && card.rating <= rate.max
+  // );
+  printFilteredCard();
 };
-filterRate(maxNum);
-//test
