@@ -7,13 +7,14 @@ let inputSearchContainer = '';
 
 const getResult = () => {
     inputSearch.addEventListener('keyup', () => {
-        inputSearchContainer = inputSearchField.value;
-        console.log(inputSearchField.value);
+        inputSearchContainer = inputSearchField.value.trim();
         if (inputSearchField.length === 0) {
             inputSearchContainer = '';
         }
         let item = JSON.parse(JSON.stringify(cards));
-        console.log(item);
+        console.log(testing)
+        let filteredText = item.filter((card) => card.title.includes(inputSearchContainer) || card.description.includes(inputSearchContainer))
+        console.log(filteredText)
     })
 }
 getResult();
