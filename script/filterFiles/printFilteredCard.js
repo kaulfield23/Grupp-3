@@ -6,7 +6,9 @@ function printFilteredCard() {
       (checkBoxFilters.length === 0 ||
         checkBoxFilters.indexOf(card.type) !== -1) &&
       (tagFilter.length === 0 ||
-        tagFilter.every((value) => card.labels.includes(value)))
+        tagFilter.every((value) => card.labels.includes(value)) &&
+        (rate.min <= card.rating && card.rating <= rate.max))
+
     );
   });
 
