@@ -15,11 +15,8 @@ const giveStarAndGetNumbers = (event) => {
     minNum = 0;
     filterRate(minNum);
   } else {
-    let forMin = inputNum < maxNum - 5;
-    let forMax = minNum < inputNum - 5;
-    let condition = inputNum <= 5 ? forMin : forMax;
     if (inputNum <= 5) {
-      if (condition) {
+      if (inputNum < maxNum -5) {
         minNum = parseInt(event.target.id);
         filterRate(minNum);
         changeStar(1, minNum);
@@ -27,7 +24,7 @@ const giveStarAndGetNumbers = (event) => {
         alert("Give a number which is less than maximum number");
       }
     } else {
-      if (condition) {
+      if (minNum < inputNum -5) {
         maxNum = parseInt(event.target.id);
         filterRate(maxNum);
         changeStar(6, maxNum);
