@@ -97,3 +97,4 @@ const filterRate = (num) => {
   );
 };
 filterRate(maxNum);
+//test
