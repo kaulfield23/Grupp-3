@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -43,7 +43,8 @@
     <div class="bookingStep2">
         <form action="/action_page.php">
             <!--Made up url-->
-            <h1>Book Room &#8220Title of room&#8221 (step 2)</h1>
+            <h1 class="roomTitleStep2"></h1>
+            <!---Blabla-->
             <div class="nameInput">
                 <label for="nameInput">Name</label><br>
                 <input type="name" name="nameInput"><br>
@@ -100,24 +101,23 @@
                     <div class="showResult"></div>
                 </div>
                 <div class="byRating">
-                    <i class="far fa-star star 1" id=1 onclick="ratingFilter1(event)"></i>
-                    <i class="far fa-star star 2" id=2 onclick="ratingFilter1(event)"></i>
-                    <i class="far fa-star star 3" id=3 onclick="ratingFilter1(event)"></i>
-                    <i class="far fa-star star 4" id=4 onclick="ratingFilter1(event)"></i>
-                    <i class="far fa-star star 5" id=5 onclick="ratingFilter1(event)"></i>
-                    to
-                    <i class="fas fa-star star" id=6 onclick="ratingFilter2(event)"></i>
-                    <i class="fas fa-star star" id=7 onclick="ratingFilter2(event)"></i>
-                    <i class="fas fa-star star" id=8 onclick="ratingFilter2(event)"></i>
-                    <i class="fas fa-star star" id=9 onclick="ratingFilter2(event)"></i>
-                    <i class="fas fa-star star" id=10 onclick="ratingFilter2(event)"></i>
+                    <i class="far fa-star star 1" id=1 onclick="giveStarAndGetNumbers(event)"></i>
+                    <i class="far fa-star star 2" id=2 onclick="giveStarAndGetNumbers(event)"></i>
+                    <i class="far fa-star star 3" id=3 onclick="giveStarAndGetNumbers(event)"></i>
+                    <i class="far fa-star star 4" id=4 onclick="giveStarAndGetNumbers(event)"></i>
+                    <i class="far fa-star star 5" id=5 onclick="giveStarAndGetNumbers(event)"></i> to
+                    <i class="fas fa-star star" id=6 onclick="giveStarAndGetNumbers(event)"></i>
+                    <i class="fas fa-star star" id=7 onclick="giveStarAndGetNumbers(event)"></i>
+                    <i class="fas fa-star star" id=8 onclick="giveStarAndGetNumbers(event)"></i>
+                    <i class="fas fa-star star" id=9 onclick="giveStarAndGetNumbers(event)"></i>
+                    <i class="fas fa-star star" id=10 onclick="giveStarAndGetNumbers(event)"></i>
                 </div>
                 <div class="byTags">
                 </div>
             </div>
             <div class="keyword">
                 <p>Or type to search for keyword</p>
-                <input type="text">
+                <input type="text" id="inputSearch">
             </div>
         </div>
     </section>
@@ -138,12 +138,11 @@
                     <small class="minParticipants"></small>
                     <small class="maxParticipants"></small>
                     </div>
-                </div>
-                <p class="challenge-description"></p>
-                <a class="challenge-cta" href="#" onclick="triggerBooking(event)">Book this room</a>
-            </li>
-        </ul>
-    </div>
+                    <p class="challenge-description"></p>
+                    <a class="challenge-cta" href="#" onclick="triggerBooking(event)">Book this room</a>
+                </li>
+            </ul>
+        </div>
     </section>
 
     <!--footer-->
@@ -190,10 +189,14 @@
         });
     </script>
     <script src="./script/script.js"></script>
-    <script src ="./script/filterFiles/filterCheckbox.js"></script>
-    <script src ="./script/filterFiles/filterShowAndClose.js"></script>
-    <script src ="./script/filterFiles/filterTag.js"></script>
+    <script src="./script/filterFiles/filterCheckbox.js"></script>
+    <script src="./script/filterFiles/filterShowAndClose.js"></script>
+    <script src="./script/filterFiles/filterTag.js"></script>
     <script src="./script/filterFiles/filterRate.js"></script>
+    <script src="./script/filterFiles/printFilteredCard.js"></script>
+    <script src="./script/filterFiles/filterInput.js"></script>
+
+
 
 
     <script src="./script/booking.js"></script>

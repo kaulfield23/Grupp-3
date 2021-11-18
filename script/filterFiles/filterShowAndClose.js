@@ -1,7 +1,7 @@
 //open and close filter
+const filter = document.querySelector(".filter");
+const filterBtn = document.querySelector(".filterBtn");
 const showAndCloseFilter = (event) => {
-  const filter = document.querySelector(".filter");
-  const filterBtn = document.querySelector(".filterBtn");
   if (event.target.classList.contains("filterBtn")) {
     filterBtn.style.display = "none";
     filter.style.display = "block";
@@ -9,6 +9,7 @@ const showAndCloseFilter = (event) => {
   } else {
     filter.style.display = "none";
     filterBtn.style.display = "block";
+    printFilteredCard('close');
   }
 };
 //when you open the nav menu, then it hides filter
@@ -34,7 +35,7 @@ const generateTags = () => {
       let tags = document.createElement("button");
       let byTags = document.querySelector(".byTags");
       tags.setAttribute("class", "tags");
-      tags.setAttribute("onclick", "filterTags(event)");
+      tags.onclick = filterTags;
       tags.innerHTML = tagName[i];
       byTags.appendChild(tags);
     }

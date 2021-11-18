@@ -2,6 +2,7 @@ let bookingStep1 = document.querySelector('.bookingStep1');
 let bookingStep2 = document.querySelector('.bookingStep2');
 let bookingStep3 = document.querySelector('.bookingStep3');
 let roomTitle = document.querySelector('.roomTitle');
+let roomTitleStep2 = document.querySelector('.roomTitleStep2');
 async function getData() {
     const url = 'https://lernia-sjj-assignments.vercel.app/api/challenges';
     const response = await fetch(url);
@@ -16,6 +17,7 @@ getData().then((data) => {
         title.push(card.title);
     });
     roomTitle.innerHTML = `Book room ${title[0]}`;
+    roomTitleStep2.innerHTML = `Book room ${title[0]}`;
 });
 
 

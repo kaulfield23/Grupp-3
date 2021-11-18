@@ -21,27 +21,10 @@ const addFilteredTag = (event) => {
 };
 
 //print the new array which has filtered tags
-const printFilteredCard = () => {
-  let showSelectedTags = document.querySelector(".showSelectedTags");
-  let item = JSON.parse(JSON.stringify(cards));
-  if (checkBoxFilters.length === 0) {
-  }
-  let filtered = item.filter(
-    (card) =>
-      checkBoxFilters.indexOf(card.type) !== -1 &&
-      tagFilter.every((value) => card.labels.includes(value))
-  );
-
-  let result = JSON.stringify(filtered);
-  if (filtered.length === 0) {
-    result = "No matching result";
-  }
-  showSelectedTags.innerHTML = result;
-};
 
 //show only selected tags in html
 const filterTags = (event) => {
   toggleBackgroundColor(event);
   addFilteredTag(event);
-  printFilteredCard();
+  printFilteredCard(event);
 };
