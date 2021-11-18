@@ -11,6 +11,14 @@
   .filterBtn {
     @include redBtn;
   }
+  .first-page{
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+  }
+  .first-page:hover{
+    font-size: 20px;
+  }
   .filter {
     display: none;
     border:2px solid lightgray;

@@ -1,9 +1,11 @@
+
+
 .challenges {
     overflow: hidden;
     display: grid;
     grid-template-columns: repeat(3, 480px);
     justify-content: center;
-
+    
   }
   .challenges-type{
     display: none;
@@ -74,10 +76,8 @@
       color:white;
     }
     @include desktop {
-     
     }
   }
-  
   .challenges-cta {
     @include challenge-ctas;
     margin: 2rem 0;
