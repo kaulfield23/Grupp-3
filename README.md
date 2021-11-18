@@ -10,3 +10,6 @@
 * Vi diskuterade merge och github.
 * Vi pratade om hur långt vi kommit med respektive arbetsuppgifter och hur det känns i nuläget.
 * Richard hjälte grupp 1 med att få bort original kortet och star rating.
+
+
+Att göra:
