@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -43,7 +43,7 @@
     <div class="bookingStep2">
         <form action="/action_page.php">
             <!--Made up url-->
-            <h1>Book Room &#8220Title of room&#8221 (step 2)</h1>
+            <h1 class="roomTitle2"></h1>
             <div class="nameInput">
                 <label for="nameInput">Name</label><br>
                 <input type="name" name="nameInput"><br>
@@ -83,7 +83,7 @@
             <a href="#" class="filterBtn" onclick="showAndCloseFilter(event)">Filter challenges</a>
         </div>
         <!--a link to go back to the main page-->
-        <a class="first-page" href ="firstPage.html">Back to main page</a>
+        <a class="first-page" href="firstPage.html">Back to main page</a>
         <div class="filter">
             <h2>Filter challenges</h2>
             <i class="fas fa-times closeBtn" onclick="showAndCloseFilter(event)"></i>
@@ -104,8 +104,7 @@
                     <i class="far fa-star star 2" id=2 onclick="ratingFilter1(event)"></i>
                     <i class="far fa-star star 3" id=3 onclick="ratingFilter1(event)"></i>
                     <i class="far fa-star star 4" id=4 onclick="ratingFilter1(event)"></i>
-                    <i class="far fa-star star 5" id=5 onclick="ratingFilter1(event)"></i>
-                    to
+                    <i class="far fa-star star 5" id=5 onclick="ratingFilter1(event)"></i> to
                     <i class="fas fa-star star" id=6 onclick="ratingFilter2(event)"></i>
                     <i class="fas fa-star star" id=7 onclick="ratingFilter2(event)"></i>
                     <i class="fas fa-star star" id=8 onclick="ratingFilter2(event)"></i>
@@ -125,25 +124,25 @@
     </div>
     <!--challenge-cards-->
     <section class="challenges">
-      <div class="challenge-all">
-        <div class="challenges-type"></div>
-        <div class="challenges-lable"></div>
-        <ul class="challenges-list">
-            <li class="challenges-item">
-                <img class="challenge-picture">
-                <h3 class="challenge-title">FULTKORT</h3>
-                <div class="challenge-meta">
-                    <ul class="challenge-rating"></ul>
-                    <div class="participants">
-                    <small class="minParticipants"></small>
-                    <small class="maxParticipants"></small>
+        <div class="challenge-all">
+            <div class="challenges-type"></div>
+            <div class="challenges-lable"></div>
+            <ul class="challenges-list">
+                <li class="challenges-item">
+                    <img class="challenge-picture">
+                    <h3 class="challenge-title">FULTKORT</h3>
+                    <div class="challenge-meta">
+                        <ul class="challenge-rating"></ul>
+                        <div class="participants">
+                            <small class="minParticipants"></small>
+                            <small class="maxParticipants"></small>
+                        </div>
                     </div>
-                </div>
-                <p class="challenge-description"></p>
-                <a class="challenge-cta" href="#" onclick="triggerBooking(event)">Book this room</a>
-            </li>
-        </ul>
-    </div>
+                    <p class="challenge-description"></p>
+                    <a class="challenge-cta" href="#" onclick="triggerBooking(event)">Book this room</a>
+                </li>
+            </ul>
+        </div>
     </section>
 
     <!--footer-->
@@ -190,9 +189,9 @@
         });
     </script>
     <script src="./script/script.js"></script>
-    <script src ="./script/filterFiles/filterCheckbox.js"></script>
-    <script src ="./script/filterFiles/filterShowAndClose.js"></script>
-    <script src ="./script/filterFiles/filterTag.js"></script>
+    <script src="./script/filterFiles/filterCheckbox.js"></script>
+    <script src="./script/filterFiles/filterShowAndClose.js"></script>
+    <script src="./script/filterFiles/filterTag.js"></script>
     <script src="./script/filterFiles/filterRate.js"></script>
 
 
