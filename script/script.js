@@ -17,9 +17,8 @@ async function getData() {
     let Description = newCard.querySelector(".challenge-description").innerHTML = challenge.description;
     let MinParticipants = newCard.querySelector(".minParticipants").innerHTML = challenge.minParticipants + " - ";
     let MaxParticipants = newCard.querySelector(".maxParticipants").innerHTML = challenge.maxParticipants + " Participants";
-    let Image = newCard.querySelector(".challenge-picture").innerHTML = challenge.image; 
+    let Image = newCard.querySelector(".challenge-picture").src = challenge.image; 
     let Lables = newCard.querySelector(".challenges-lable").innerHTML = challenge.labels;
-    let Btn1 = newCard.querySelector(".challenge-cta");
     let Btn2 = newCard.querySelector(".challenge-cta");
     
     //changes cards depending on "onsite" or "online".
@@ -52,9 +51,8 @@ async function getData() {
 }
 getData();
 
-  
 //bilden???
-//cards och text storlek
+
 
 
 
