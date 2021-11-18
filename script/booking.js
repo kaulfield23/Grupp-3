@@ -4,8 +4,8 @@ let bookingStep3 = document.querySelector('.bookingStep3');
 let roomTitle = document.querySelector('.roomTitle');
 let roomTitle2 = document.querySelector('.roomTitle2');
 let submitBtn1 = document.querySelector('.submitBtnStep1');
-submitBtn1.setAttribute('onclick', 'giveName(event)');
 let card = document.querySelector(".challenge-all");
+
 
 async function getData() {
     const url = 'https://lernia-sjj-assignments.vercel.app/api/challenges';
@@ -34,29 +34,46 @@ console.log();
 });*/
 
 
-//roomTitle.innerHTML = 'Book Room: ' + challenges.title;
+getData().then((data) => {
+            data.challenges.forEach((card) => {
+                title.push(card.title);
+            });
+            roomTitle.innerHTML = `Book room ${title[0]}`;
+            roomTitleStep2.innerHTML = `Book room ${title[0]}`;
 
-let Title = document.querySelector(".challenge-title").innerHTML = card.title;
 
-function triggerBooking(event) {
-    let titleName = event.target.parentNode.children[1].textContent;
-    let eventName = event.target.className;
-    if (eventName === "challenge-cta") {
-        bookingStep1.style.display = "block";
-    } else if (eventName === "submitBtnStep1") {
-        bookingStep1.style.display = "none";
-        bookingStep2.style.display = "block";
-    } else if (eventName === "submitBtnStep2") {
-        bookingStep2.style.display = "none";
-        bookingStep3.style.display = "block";
-    } else {
-        bookingStep3.style.display = "none";
-    }
-    roomTitle.innerHTML = `Book room: ${titleName} step 1`;
-}
+            //roomTitle.innerHTML = 'Book Room: ' + challenges.title;
 
-const giveName = (event) => {
-        let titleName = event.target.parentNode.children[1].textContent;
-        roomTitle2.innerHTML = `Book room: ${titleName} step 2`;
-    }
-    //Notes: users input, compare with title description. If exists return it.*/
+            let Title = document.querySelector(".challenge-title").innerHTML = card.title;
+
+
+
+            const giveName = (event) => {
+                    let titleName = event.target.parentNode.children[1].textContent;
+                    roomTitle2.innerHTML = `Book room: ${titleName} step 2`;
+                }
+                //Notes: users input, compare with title description. If exists return it.*/
+
+
+        }
+        //use this below
+        // let titleName;
+        // const giveTitleAndTrigger = (event) => {
+        //     let eventName = event.target.className;
+        //     if (eventName === "challenge-cta") {
+        //         titleName = event.target.parentNode.children[1].textContent;
+        //         roomTitle.innerHTML = Book room: $ { titleName }
+        //         step 1;
+        //         bookingStep1.style.display = "block";
+        //     } else if (eventName === "submitBtnStep1") {
+        //         bookingStep1.style.display = "none";
+        //         bookingStep2.style.display = "block";
+        //         roomTitle2.innerHTML = Book room: $ { titleName }
+        //         step 2;
+        //     } else if (eventName === "submitBtnStep2") {
+        //         bookingStep2.style.display = "none";
+        //         bookingStep3.style.display = "block";
+        //     } else {
+        //         bookingStep3.style.display = "none";
+        //     }
+        // }*/
