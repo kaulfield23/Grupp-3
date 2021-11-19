@@ -4,13 +4,12 @@ function printFilteredCard(msg) {
   let filtered = item.filter((card) => {
     return (
       (checkBoxFilters.length === 0 ||
-        (checkBoxFilters.indexOf(card.type) !== -1)
-        &&(rate.min <= card.rating && card.rating <= rate.max))
+        (checkBoxFilters.indexOf(card.type) !== -1
+        && rate.min <= card.rating && card.rating <= rate.max))
         &&(tagFilter.length === 0 ||
         (tagFilter.every((value) => card.labels.includes(value)
-        &&(rate.min <= card.rating && card.rating <= rate.max)))
-        &&(rate.min <= card.rating && card.rating <= rate.max))
-        
+        &&rate.min <= card.rating && card.rating <= rate.max)))
+        &&(rate.min <= card.rating && card.rating <= rate.max)
     );
   });
   let result = JSON.stringify(filtered);
