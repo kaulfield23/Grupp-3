@@ -94,10 +94,5 @@ const filterRate = (num) => {
   rate.max = max;
   console.log(rate)
 
-  // let item = JSON.parse(JSON.stringify(cards));
-  // console.log(rate);
-  // let filteredRate = item.filter(
-  //   (card) => rate.min <= card.rating && card.rating <= rate.max
-  // );
   printFilteredCard();
 };
