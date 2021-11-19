@@ -73,13 +73,13 @@ const changeStar = (num, bpNum) => {
     let star = document.getElementById(`${i}`);
     star.setAttribute("class", "fas fa-star");
     star.setAttribute("onlick", "ratingFilter1(event)");
-    star.style.color = "purple";
+    star.style.color = "#6558F5";
     star.style.cursor = "pointer";
   }
   for (let i = bpNum; i < max; i++) {
     let star = document.getElementById(`${i + 1}`);
     star.setAttribute("class", "far fa-star");
-    star.style.color = "purple";
+    star.style.color = "#6558F5";
     star.style.cursor = "pointer";
 
   }

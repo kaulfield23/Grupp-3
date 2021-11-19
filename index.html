@@ -86,10 +86,11 @@
         <!--a link to go back to the main page-->
         <a class="first-page" href ="firstPage.html">Back to main page</a>
         <div class="filter">
-            <h2>Filter challenges</h2>
+            <span id=filterTitle>Filter challenges</span>
             <i class="fas fa-times closeBtn" onclick="showAndCloseFilter(event)"></i>
             <div class="threeTypes">
                 <div class="byType">
+                    <h4>By type</h4>
                     <div>
                         <input type="checkbox" name="online" id="online" onclick="onClickCheckbox(event)">
                         <label for="online">Include online challenges</label>
@@ -101,11 +102,13 @@
                     <div class="showResult"></div>
                 </div>
                 <div class="byRating">
+                    <h4>By rating</h4>
                     <i class="far fa-star star 1" id=1 onclick="giveStarAndGetNumbers(event)"></i>
                     <i class="far fa-star star 2" id=2 onclick="giveStarAndGetNumbers(event)"></i>
                     <i class="far fa-star star 3" id=3 onclick="giveStarAndGetNumbers(event)"></i>
                     <i class="far fa-star star 4" id=4 onclick="giveStarAndGetNumbers(event)"></i>
-                    <i class="far fa-star star 5" id=5 onclick="giveStarAndGetNumbers(event)"></i> to
+                    <i class="far fa-star star 5" id=5 onclick="giveStarAndGetNumbers(event)"></i>
+                    <span id ="to">to</span>
                     <i class="fas fa-star star" id=6 onclick="giveStarAndGetNumbers(event)"></i>
                     <i class="fas fa-star star" id=7 onclick="giveStarAndGetNumbers(event)"></i>
                     <i class="fas fa-star star" id=8 onclick="giveStarAndGetNumbers(event)"></i>
@@ -113,6 +116,8 @@
                     <i class="fas fa-star star" id=10 onclick="giveStarAndGetNumbers(event)"></i>
                 </div>
                 <div class="byTags">
+                    <h4>By tags</h4>
+
                 </div>
             </div>
             <div class="keyword">
