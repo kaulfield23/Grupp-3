@@ -1,7 +1,7 @@
 let minNum = 0;
 let maxNum = 10;
 
-const giveStarAndGetNumbers = (event) => {
+const setStars = (event) => {
   let secondStar = document.getElementById("2");
   let inputNum = parseInt(event.target.id);
   //if user click first start to get 0 rate
