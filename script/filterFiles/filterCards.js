@@ -3,14 +3,7 @@ function printFilteredCard(msg) {
   let item = JSON.parse(JSON.stringify(dataForFilter));
   let filtered = item.filter((card) => {
     return (
-      (checkBoxFilters.length === 0 ||
-        (checkBoxFilters.indexOf(card.type) !== -1
-        && rate.min <= card.rating && card.rating <= rate.max))
-        &&(tagFilter.length === 0 ||
-        (tagFilter.every((value) => card.labels.includes(value)
-        &&rate.min <= card.rating && card.rating <= rate.max)))
-        &&(rate.min <= card.rating && card.rating <= rate.max)
-        &&(card.title.toLowerCase().includes(inputSearchContainer) || card.description.toLowerCase().includes(inputSearchContainer))
+        checkCheckBox(card) && checkTag(card) && checkRate(card) && checkInput(card)
     );
   });
   let result = JSON.stringify(filtered);
@@ -24,4 +17,33 @@ function printFilteredCard(msg) {
     filter.style.display = "none";
     filterBtn.style.display="block"
   }
+}
+
+function checkCheckBox(card){
+  return(
+    (checkBoxFilters.length === 0 ||
+      (checkBoxFilters.indexOf(card.type) !== -1
+      && rate.min <= card.rating && card.rating <= rate.max))
+  )
+}
+
+function checkTag(card){
+  return(
+    (tagFilter.length === 0 ||
+      (tagFilter.every((value) => card.labels.includes(value)
+      &&rate.min <= card.rating && card.rating <= rate.max)))
+  )
+
+}
+function checkRate(card){
+  return(
+    (rate.min <= card.rating && card.rating <= rate.max)
+  )
+}
+
+function checkInput(card){
+  return(
+    (card.title.toLowerCase().includes(inputSearchContainer)
+    || card.description.toLowerCase().includes(inputSearchContainer))
+  )
 }

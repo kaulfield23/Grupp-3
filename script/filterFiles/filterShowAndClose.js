@@ -12,6 +12,7 @@ const showAndCloseFilter = (event) => {
     printFilteredCard('close');
   }
 };
+
 //when you open the nav menu, then it hides filter
 const hideFilter = () => {
   filter.style.display === "none"
