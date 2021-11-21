@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="/src/mainPage.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/src/mainPage.css"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/07a95dbd5e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/src/main.css">
+
   </head>
   <body>
     <header class="header">
@@ -45,7 +47,7 @@
         </li>
       </ul>
     </section>
-    <h2>Popular challenges right now</h2>
+    <h2 style="text-align:center">Popular challenges right now</h2>
     <section class="challenges">
       <div class="challenge-all">
         <div class="challenges-type"></div>
@@ -67,6 +69,57 @@
         </ul>
     </div>
     </section>
+     <!--<div class="bookingContainer"><--->
+      <div class="bookingStep1">
+        <form action="">
+            <!---/action_page.php-->
+            <h1 class="roomTitle"></h1>
+            <div class="inputStep1">
+                <label for="step1Date">
+          What date would you like?
+      </label><br>
+                <input type="date" name="step1Date">
+            </div>
+            <input type="submit" value="Submit" class="submitBtnStep1" onclick="triggerBooking(event)">
+        </form>
+    </div>
+    <div class="bookingStep2">
+        <form action="/action_page.php">
+            <!--Made up url-->
+            <h1 class="roomTitleStep2"></h1>
+            <!---Blabla-->
+            <div class="nameInput">
+                <label for="nameInput">Name</label><br>
+                <input type="name" name="nameInput"><br>
+            </div>
+            <div class="emailInput">
+                <label for="emailInput">E-mail</label><br>
+                <input type="email"><br>
+            </div>
+            <div class="inputTime">
+                <label for="inputTime">What time?</label><br>
+                <input type="time" name="inputTime" min="09:00" max="18:00" required><br>
+            </div>
+            <div class="inputParticipants">
+                <label for="inputParticipants">How many participants?</label><br>
+                <select name="inputParticipants" id="inputParticipants">
+          <option value="2">2 participants</option>
+          <option value="3">3 participants</option>
+          <option value="4">4 participants</option>
+          <option value="5">5 participants</option>
+          <option value="6">6 participants</option>
+      </select>
+            </div>
+            <input type="submit" value="Submit" class="submitBtnStep2" onclick="triggerBooking(event)">
+        </form>
+    </div>
+    <div class="bookingStep3">
+        <h1>Thank you!</h1>
+        <a href="#" onclick="triggerBooking(event)">Back to challenges</a>
+    </div>
+
+
+
     <div class="challenges-cta">
       <a class="challenges-cta-online" href="#">Online challenges</a>
       <a class="challenges-cta-onsite" href="#">On-site challenges</a>
