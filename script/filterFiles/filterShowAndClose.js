@@ -19,10 +19,23 @@ const hideFilter = () => {
     : (filter.style.display = "none");
 };
 
+//fetching data
+async function getTags() {
+  const url = "https://lernia-sjj-assignments.vercel.app/api/challenges";
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+}
+
+let dataForFilter = [];
+getTags().then((data) => {
+  dataForFilter = data.challenges;
+});
+
 //generate tags
 let tagName = [];
 const generateTags = () => {
-  let item = JSON.parse(JSON.stringify(cards));
+  let item = JSON.parse(JSON.stringify(dataForFilter));
   if (tagName.length === 0) {
     item.forEach((card) =>
       card.labels.forEach((value) => {

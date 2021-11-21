@@ -4,9 +4,9 @@ let maxNum = 10;
 const giveStarAndGetNumbers = (event) => {
   let secondStar = document.getElementById("2");
   let inputNum = parseInt(event.target.id);
+  //if user click first start to get 0 rate
   if (
     event.target.id === "1" &&
-    event.target.className === "fas fa-star" &&
     secondStar.className === "far fa-star"
   ) {
     let star = document.getElementById("1");
@@ -15,6 +15,7 @@ const giveStarAndGetNumbers = (event) => {
     minNum = 0;
     filterRate(minNum);
   } else {
+    //if stars on the left are less than 5.
     if (inputNum <= 5) {
       if (inputNum < maxNum -5) {
         minNum = parseInt(event.target.id);
@@ -24,6 +25,7 @@ const giveStarAndGetNumbers = (event) => {
         alert("Give a number which is less than maximum number");
       }
     } else {
+      //if stars on the right is more than minimum number
       if (minNum < inputNum -5) {
         maxNum = parseInt(event.target.id);
         filterRate(maxNum);
