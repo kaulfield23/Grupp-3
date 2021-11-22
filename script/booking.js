@@ -3,15 +3,11 @@ let bookingStep2 = document.querySelector('.bookingStep2');
 let bookingStep3 = document.querySelector('.bookingStep3');
 let roomTitle = document.querySelector('.roomTitle');
 let roomTitle2 = document.querySelector('.roomTitleStep2');
-
 let inputDate = document.querySelector('#inputDate');
 let search = document.querySelector('#search');
 let originalUrl = 'https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=';
 let selectTimes = document.querySelector('#selectTimes');
 let option = document.querySelectorAll('option');
-
-
-
 
 //Notes: users input, compare with title description. If exists return it.*/
 
@@ -89,3 +85,4 @@ function participantsDropDown() {
     }
 
 }
+
