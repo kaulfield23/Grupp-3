@@ -1,5 +1,3 @@
-
-
 async function getChallenges() {
   const url = 'https://lernia-sjj-assignments.vercel.app/api/challenges';
   const response = await fetch(url);
@@ -36,7 +34,6 @@ function buildCardsForChallenges(challenges) {
     }
     else if (Type == "online") {
       Btn2.innerHTML = "Take this challenge online";
-    }
 
     //Makes the rating number a star.
     const starContainer = newCard.querySelector('.challenge-rating');
@@ -68,7 +65,3 @@ init();
 
 
 
-
-
-
-//test
