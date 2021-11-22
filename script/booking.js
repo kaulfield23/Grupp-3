@@ -3,6 +3,7 @@ let bookingStep2 = document.querySelector('.bookingStep2');
 let bookingStep3 = document.querySelector('.bookingStep3');
 let roomTitle = document.querySelector('.roomTitle');
 let roomTitle2 = document.querySelector('.roomTitleStep2');
+
 let inputDate = document.querySelector('#inputDate');
 let search = document.querySelector('#search');
 let originalUrl = 'https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=';
@@ -49,6 +50,7 @@ search.addEventListener('click', () => {
     fetch(result)
         .then(res => res.json())
         .then(data => dropDown(data.slots))
+    return result;
 })
 
 function dropDown(data) {
@@ -83,8 +85,35 @@ function participantsDropDown() {
         selectParticipants.appendChild(el);
         count++;
     }
-
+    return selectParticipants;
 }
 
-//text
+let postBookingBtn = document.querySelector('#postBookingBtn');
+postBookingBtn.addEventListener('click', postBooking);
 
+async function postBooking() {
+    const selectParticipants = document.querySelector('#inputParticipants').value;
+    let name = document.querySelector('#name').value;
+    let email = document.querySelector('#email').value;
+    let result = originalUrl.concat(inputDate.value);
+    console.log(name.value);
+    console.log(email.value);
+    console.log(selectParticipants.value);
+    let url = 'https://lernia-sjj-assignments.vercel.app/api/booking/reservations';
+    const response = await fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        credential: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: name,
+            email: email,
+            date: inputDate.value,
+            participants: selectParticipants
+        })
+    }).then(res => {
+        return response.json()
+    }).then(data => console.log(data)).catch(error => console.log('ERROR'))
+}
