@@ -1,15 +1,24 @@
-//Function for fetching api.
-async function getData() {
+
+
+async function getChallenges() {
   const url = 'https://lernia-sjj-assignments.vercel.app/api/challenges';
   const response = await fetch(url);
   const data = await response.json();
-  let card = document.querySelector(".challenge-all");
+
+  return data.challenges;
+}
+
+let initialCard;
+
+function buildCardsForChallenges(challenges) {
+  const container = document.querySelector('section.challenges');
+  container.innerHTML = '';
 
   //loop for cards and information.
-  for (let i = 0; i < data.challenges.length; i++) {
-    let challenge = data.challenges[i];
-    let newCard = card.cloneNode(true);
-    card.parentNode.append(newCard);
+  for (let i = 0; i < challenges.length; i++) {
+    let challenge = challenges[i];
+    let newCard = initialCard.cloneNode(true);
+    container.append(newCard);
 
     //ändrar värdet i deklarationerna.
     let Type = newCard.querySelector(".challenges-type").innerHTML = challenge.type;
@@ -45,11 +54,17 @@ async function getData() {
       starContainer.append(star);
     }
   }
-  //removes "original" hardcoded card.
-  card.remove();
-  
 }
-getData();
+
+async function init() {
+  initialCard = document.querySelector(".challenge-all");
+  initialCard.remove();
+
+  const data = await getChallenges();
+  buildCardsForChallenges(data);
+}
+
+init();
 
 //bilden???
 
