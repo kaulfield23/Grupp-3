@@ -1,5 +1,4 @@
 function printFilteredCard(msg) {
-  let showSelectedTags = document.querySelector(".showSelectedTags");
   let item = JSON.parse(JSON.stringify(dataForFilter));
   let filtered = item.filter((card) => {
     return (
@@ -10,13 +9,16 @@ function printFilteredCard(msg) {
   if (filtered.length === 0) {
     result = "No matching result";
   }
-  showSelectedTags.innerHTML = result;
+  
+  // getData2('filter', filtered)
 
   if(msg ==="close"){
     showSelectedTags.innerHTML ="";
     filter.style.display = "none";
     filterBtn.style.display="block"
   }
+
+  buildCardsForChallenges(filtered);
 }
 
 function checkCheckBox(card){
