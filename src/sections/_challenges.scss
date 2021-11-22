@@ -1,9 +1,16 @@
-
-
+.all-challenges-align{
+  text-align: center;
+  .all-challenges{
+    @include redBtn;
+    background-color: $c-purple;
+    padding:10px;
+  }
+  margin-bottom:50px;
+}
 .challenges {
     overflow: hidden;
     display: grid;
-    grid-template-columns: repeat(3, 480px);
+    grid-template-columns: repeat(3, 400px);
     justify-content: center;
     
   }
@@ -15,7 +22,7 @@
   }
   .challenges-list {
     display: flex;
-    width: 450px;
+    
     height: 560px;
     @include desktop {
       
@@ -26,12 +33,14 @@
   .challenges-item {
     display: flex;
     flex-direction: column;
+    position:relative;
     border-radius: $border-radius;
     background-color: white;
     box-shadow: 0 0 1rem rgba($c-beige, 10);
     margin: 1rem;
     overflow: hidden;
     max-height: 600px;
+ 
   
     & > *:not(img) {
       margin: 0 1rem;
@@ -70,6 +79,8 @@
       font-size: 16px;
     }
     .challenge-cta {
+      position:absolute;
+      top:80%;
       @include button($c-red);
       margin: 1rem;
       align-self: flex-end;
@@ -82,5 +93,3 @@
     @include challenge-ctas;
     margin: 2rem 0;
   }
-
- 
