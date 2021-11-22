@@ -1,100 +1,28 @@
-let minNum = 0;
-let maxNum = 10;
-
-const setStars = (event) => {
-  let secondStar = document.getElementById("2");
-  let inputNum = parseInt(event.target.id);
-  //if user click first start to get 0 rate
-  if (
-    event.target.id === "1" &&
-    secondStar.className === "far fa-star"
-  ) {
-    let star = document.getElementById("1");
-    star.className = "far fa-star";
-    star.setAttribute("onlick", "ratingFilter1(event)");
-    minNum = 0;
-    filterRate(minNum);
-  } else {
-    //if stars on the left are less than 5.
-    if (inputNum <= 5) {
-      if (inputNum < maxNum -5) {
-        minNum = parseInt(event.target.id);
-        filterRate(minNum);
-        changeStar(1, minNum);
-      } else {
-        alert("Give a number which is less than maximum number");
-      }
-    } else {
-      //if stars on the right is more than minimum number
-      if (minNum < inputNum -5) {
-        maxNum = parseInt(event.target.id);
-        filterRate(maxNum);
-        changeStar(6, maxNum);
-      } else {
-        alert(`Give a number which is more than minimum number`);
-      }
-    }
-  }
+const rate = {
+  min: 0,
+  max: 5,
 };
-
-// const ratingFilter1 = (event) => {
-//   let secondStar = document.getElementById("2");
-//   if (parseInt(event.target.id) < maxNum - 5) {
-//     minNum = parseInt(event.target.id);
-//   } else {
-//     alert("Give a number which is less than maximum number");
-//   }
-//   if (
-//     event.target.id === "1" &&
-//     event.target.className === "fas fa-star" &&
-//     secondStar.className === "far fa-star"
-//   ) {
-//     let star = document.getElementById("1");
-//     star.className = "far fa-star";
-//     star.setAttribute("onlick", "ratingFilter1(event)");
-//     minNum = 0;
-//   } else {
-//     changeStar(1, minNum);
-//   }
-//   filterRate(minNum);
-//   // changeStar(1, minNum);
-// };
-// const ratingFilter2 = (event) => {
-//   if (parseInt(event.target.id) - 5 > minNum) {
-//     maxNum = parseInt(event.target.id);
-//   } else {
-//     alert(`Give a number which is more than minimum number`);
-//   }
-//   filterRate(maxNum);
-//   changeStar(6, maxNum);
-// };
-
-const changeStar = (num, bpNum) => {
-  let max = num > 5 ? 10 : 5;
-  for (let i = num; i < bpNum + 1; i++) {
-    let star = document.getElementById(`${i}`);
-    star.setAttribute("class", "fas fa-star");
-    star.setAttribute("onlick", "ratingFilter1(event)");
-    star.style.color = "#6558F5";
-    star.style.cursor = "pointer";
+const setStars = (inputNum, limit) => {
+  if (inputNum == 1 && rate[limit] == 1) {
+    inputNum = 0;
   }
-  for (let i = bpNum; i < max; i++) {
-    let star = document.getElementById(`${i + 1}`);
-    star.setAttribute("class", "far fa-star");
-    star.style.color = "#6558F5";
-    star.style.cursor = "pointer";
 
+  if (limit == 'max' && inputNum < rate.min) {
+    inputNum = rate.min;
   }
-};
+  
+  if(limit =='min' && inputNum > rate.max ){
+    inputNum = rate.max;
+  }
 
-let min;
-let max =5;
-let rate = { min : 0, max:5};
-const filterRate = (num) => {
-  num > 5 ? (max = num - 5) : (min = num);
-  rate.min = min;
-  rate.max = max;
-  console.log(rate)
+  for (let i = 1; i <= 5; i++) {
+    const classSelector = `.${limit}Star${i}`;
+    const starElem = document.querySelector(classSelector);
+    starElem.classList.toggle('fas', i <= inputNum);
+    starElem.classList.toggle('far', i > inputNum);
+  }
 
+  rate[limit] = inputNum;
   printFilteredCard();
-};
+}
+
