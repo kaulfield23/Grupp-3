@@ -38,6 +38,37 @@
         <a href="#" class="submitBtnStep1" id="search" onclick="giveTitleAndTrigger(event)">Submit</a>
     </div>
     <div class="bookingStep2">
+<<<<<<< HEAD
+        <form action="/action_page.php">
+            <!--Made up url-->
+            <h1 class="roomTitle2"></h1>
+            <h1 class="roomTitleStep2"></h1>
+            <!---Blabla-->
+            <div class="nameInput">
+                <label for="nameInput">Name</label><br>
+                <input type="name" name="nameInput"><br>
+            </div>
+            <div class="emailInput">
+                <label for="emailInput">E-mail</label><br>
+                <input type="email"><br>
+            </div>
+            <div class="inputTime">
+                <label for="inputTime">What time?</label><br>
+                <input type="time" name="inputTime" min="09:00" max="18:00" required><br>
+            </div>
+            <div class="inputParticipants">
+                <label for="inputParticipants">How many participants?</label><br>
+                <select name="inputParticipants" id="inputParticipants">
+          <option value="2">2 participants</option>
+          <option value="3">3 participants</option>
+          <option value="4">4 participants</option>
+          <option value="5">5 participants</option>
+          <option value="6">6 participants</option>
+      </select>
+            </div>
+            <input type="submit" value="Submit" class="submitBtnStep2" onclick="triggerBooking(event)">
+        </form>
+=======
         <h1 class="roomTitleStep2"></h1>
         <!---Blabla-->
         <div class="nameInput">
@@ -59,6 +90,7 @@
         </select>
         </div>
         <a href="#" class="submitBtnStep2" onclick="giveTitleAndTrigger(event)">Submit</a>
+>>>>>>> 71aedef9d5a2775f27c9f7775cc58b6f35290c4c
     </div>
     <div class="bookingStep3">
         <h1>Thank you!</h1>

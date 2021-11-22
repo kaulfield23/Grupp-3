@@ -1,3 +1,4 @@
+
 .all-challenges-align{
   text-align: center;
   .all-challenges{
@@ -12,25 +13,26 @@
     display: grid;
     grid-template-columns: repeat(3, 400px);
     justify-content: center;
-    
-  }
-  .challenges-type{
+}
+
+.challenges-type {
     display: none;
-  }
-  .challenges-lable{
+}
+
+.challenges-lable {
     display: none;
-  }
-  .challenges-list {
+}
+
+.challenges-list {
     display: flex;
     
     height: 560px;
     @include desktop {
-      
-      justify-content: center;
+        justify-content: center;
     }
-  }
-  
-  .challenges-item {
+}
+
+.challenges-item {
     display: flex;
     flex-direction: column;
     position:relative;
@@ -40,43 +42,37 @@
     margin: 1rem;
     overflow: hidden;
     max-height: 600px;
- 
-  
-    & > *:not(img) {
-      margin: 0 1rem;
+    &>*:not(img) {
+        margin: 0 1rem;
+
     }
-  
     .challenge-title {
-      font-size: 25px;
-      font-weight: normal;
-      margin-top: 1rem;
+        font-size: 25px;
+        font-weight: normal;
+        margin-top: 1rem;
     }
-  
     .challenge-meta {
-      display: flex;
-      margin-top: 0.5rem;
-  
-      @include desktop {
-        justify-content: space-between;
-      }
+        display: flex;
+        margin-top: 0.5rem;
+        @include desktop {
+            justify-content: space-between;
+        }
     }
-  
-    .participants{
-      font-size: 20px;
+    .participants {
+        font-size: 20px;
     }
     .challenge-rating {
-      display: flex;
-      margin: 0 1rem 0 0;
-      li{
-        color:red;
-        font-size: 20px;
-      } 
+        display: flex;
+        margin: 0 1rem 0 0;
+        li {
+            color: red;
+            font-size: 20px;
+        }
     }
-  
     .challenge-description {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      font-size: 16px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-size: 16px;
     }
     .challenge-cta {
       position:absolute;
@@ -88,10 +84,15 @@
     }
     @include desktop {
     }
-  }
-  .challenges-cta {
+    @include desktop {}
+}
+
+.challenges-cta {
     @include challenge-ctas;
     margin: 2rem 0;
+
   }
 
+
   //text
+
