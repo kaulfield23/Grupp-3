@@ -11,5 +11,9 @@ const onClickCheckbox = (event) => {
         checkBoxFilters.splice(checkBoxFilters.indexOf(eventId), 1);
     }
 
-    printFilteredCard();
+
+  printFilteredCard();
 };
+
+//text
+

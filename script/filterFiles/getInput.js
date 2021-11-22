@@ -10,3 +10,5 @@ inputSearch.addEventListener('keyup', () => {
     // });
     printFilteredCard();
 })
+
+//text
