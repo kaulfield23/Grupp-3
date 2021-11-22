@@ -4,6 +4,14 @@
   font-size:35px;
 }
 .filterClass {
+  .first-page{
+    font-weight: bold;
+    color:$c-purple;
+  }
+  #filterTitle{
+    font-size:20px;
+    color:rgb(85, 84, 84);
+  }
   #filterBtnCenter{
     @include flexCenter;
   }
@@ -21,35 +29,49 @@
   }
   .filter {
     display: none;
-    border:2px solid lightgray;
+    border:3px solid lightgray;
     padding:30px;
     position:relative;
     margin:20px;
   }
   .threeTypes {
+    .byType div{
+      margin:5px 0;
+    }
+    
     display: flex;
     justify-content: space-between;
     margin-top:50px;
+    h4{
+      margin-bottom:15px;
+    }
     .byTags {
+      width:400px;
       .tags {
-        margin:5px;
-        border-radius: 10px;
+        margin:0 8px 8px 0;
+        border-radius: 20px;
         border: 2px solid lightgray;
-        padding: 5px;
+        padding: 5px 8px;
         color: grey;
         font-weight: bold;
+        background-color: white;
         cursor: pointer;
         &:hover {
           color:black;
         }
       }
       .tagSelected{
-        background-color: darkslateblue;
+        background-color: $c-grey;
+        color:white;
+        border: 2px solid  $c-grey;
       }
     }
     .byRating{
+      #to{
+        padding:10px;
+      }
       .star{
-        color:purple;
+        color:$c-purple;
         cursor:pointer;
         &:hover{
           color:palevioletred;
@@ -62,13 +84,6 @@
       justify-content: center;
     }
   }
-  .keyword{
-    margin-top:50px;
-    text-align: center;
-    p{
-      margin-bottom:30px;
-    }
-  }
   .closeBtn{
     position:absolute;
     right:15px;
@@ -76,6 +91,27 @@
     font-size:35px;
     cursor: pointer;
     color:grey;
+  }
+  .keyword{
+    margin-top:50px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    h4{
+      margin-bottom:15px;
+    }
+    #inputSearch{
+      height:40px;
+      border:3px solid lightgray;
+      border-radius: 4px;
+      width:300px;
+      text-indent:15px;
+    }
+    #inputSearch::placeholder{
+      color: #C8D3DC;
+      font-size:1.3em;
+      font-weight: bold;
+    }
   }
 }
 
