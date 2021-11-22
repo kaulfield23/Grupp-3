@@ -63,5 +63,4 @@ async function init() {
 
 init();
 
-//bilden???
 
