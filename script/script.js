@@ -34,7 +34,7 @@ function buildCardsForChallenges(challenges) {
     }
     else if (Type == "online") {
       Btn2.innerHTML = "Take this challenge online";
-
+}
     //Makes the rating number a star.
     const starContainer = newCard.querySelector('.challenge-rating');
     for (let starIndex = 0; starIndex < 5; starIndex++) {
@@ -53,6 +53,7 @@ function buildCardsForChallenges(challenges) {
   }
 }
 
+
 async function init() {
   initialCard = document.querySelector(".challenge-all");
   initialCard.remove();
@@ -64,8 +65,4 @@ async function init() {
 init();
 
 
-
-
-
-//test
 
