@@ -4,9 +4,16 @@
   font-size:35px;
 }
 .filterClass {
+  
+  align-items: center;
   .first-page{
+    text-align:center;
     font-weight: bold;
-    color:$c-purple;
+    color:black;
+  }
+
+  .first-page:hover, .first-page:focus, .first-page:active{
+    text-decoration: none;
   }
   #filterTitle{
     font-size:20px;

@@ -1,14 +1,29 @@
-async function getData() {
-    const url = 'https://lernia-sjj-assignments.vercel.app/api/challenges';
-    const response = await fetch(url);
-    const data = await response.json();
-    let card = document.querySelector(".challenge-all");
-  
+async function getChallenges() {
+  const url = 'https://lernia-sjj-assignments.vercel.app/api/challenges';
+  const response = await fetch(url);
+  const data = await response.json();
+
+  return data.challenges;
+}
+
+let initialCard;
+
+function buildCardsForChallenges(challenges) {
+  const container = document.querySelector('section.challenges');
+  container.innerHTML = '';
+
+  if(challenges.length ===0){
+    const noMatch = document.createElement('span')
+    noMatch.className = 'noMatch';
+    noMatch.innerHTML = 'No matching Challenges';
+    container.style.padding= '150px';
+    container.append(noMatch)
+  } else {
     //loop for cards and information.
     for (let i = 0; i < 3; i++) {
-      let challenge = data.challenges[i];
-      let newCard = card.cloneNode(true);
-      card.parentNode.append(newCard);
+      let challenge = challenges[i];
+      let newCard = initialCard.cloneNode(true);
+      container.append(newCard);
   
       //ändrar värdet i deklarationerna.
       let Type = newCard.querySelector(".challenges-type").innerHTML = challenge.type;
@@ -26,8 +41,7 @@ async function getData() {
       }
       else if (Type == "online") {
         Btn2.innerHTML = "Take this challenge online";
-      }
-  
+  }
       //Makes the rating number a star.
       const starContainer = newCard.querySelector('.challenge-rating');
       for (let starIndex = 0; starIndex < 5; starIndex++) {
@@ -44,10 +58,16 @@ async function getData() {
         starContainer.append(star);
       }
     }
-    //removes "original" hardcoded card.
-    card.remove();
-    
   }
-  getData();
-  
-  //text
+}
+
+
+async function init() {
+  initialCard = document.querySelector(".challenge-all");
+  initialCard.remove();
+
+  const data = await getChallenges();
+  buildCardsForChallenges(data);
+}
+
+init();
