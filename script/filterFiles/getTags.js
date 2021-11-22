@@ -28,3 +28,5 @@ const filterTags = (event) => {
   addFilteredTag(event);
   printFilteredCard(event);
 };
+
+//text

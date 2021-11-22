@@ -26,3 +26,4 @@ const setStars = (inputNum, limit) => {
   printFilteredCard();
 }
 
+//text
