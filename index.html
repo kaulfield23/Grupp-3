@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet" />
     <script src="https://kit.fontawesome.com/07a95dbd5e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="/src/main.css">
 </head>
@@ -26,18 +27,19 @@
         </ul>
     </nav>
     <!--booking-system-->
-    <!--<div class="bookingContainer"><--->
-    <div class="bookingStep1">
+    <div class="bookingContainer">
+     <div class="bookingStep1">
         <h1 class="roomTitle"></h1>
         <div class="inputStep1">
             <label for="step1Date">
-          What date would you like?
-      </label><br>
+                What date would you like to come?
+            </label><br>
+            <p>Date</p>
             <input type="date" name="step1Date" id="inputDate">
         </div>
         <a href="#" class="submitBtnStep1" id="search" onclick="giveTitleAndTrigger(event)">Submit</a>
-    </div>
-    <div class="bookingStep2">
+        </div>
+        <div class="bookingStep2">
         <h1 class="roomTitleStep2"></h1>
         <!---Blabla-->
         <div class="nameInput">
@@ -55,18 +57,17 @@
         <div class="inputParticipants">
             <label for="inputParticipants">How many participants?</label><br>
             <select name="inputParticipants" id="inputParticipants">
-         
-        </select>
+
+            </select>
         </div>
         <a href="#" id="postBookingBtn" class="submitBtnStep2" onclick="giveTitleAndTrigger(event)">Submit</a>
 
-    </div>
-    <div class="bookingStep3">
+        </div>
+        <div class="bookingStep3">
         <h1>Thank you!</h1>
         <a href="#" onclick="giveTitleAndTrigger(event)">Back to challenges</a>
+        </div>
     </div>
-
-
 
     <!--filter-prop-->
     <h2 id="ourChallenges">Our challenges</h2>
@@ -99,7 +100,7 @@
                     <i class="far fa-star star minStar3" onclick="setStars(3, 'min')"></i>
                     <i class="far fa-star star minStar4" onclick="setStars(4, 'min')"></i>
                     <i class="far fa-star star minStar5" onclick="setStars(5, 'min')"></i>
-                    <span id ="to">to</span>
+                    <span id="to">to</span>
                     <i class="fas fa-star star maxStar1" onclick="setStars(1, 'max')"></i>
                     <i class="fas fa-star star maxStar2" onclick="setStars(2, 'max')"></i>
                     <i class="fas fa-star star maxStar3" onclick="setStars(3, 'max')"></i>
@@ -151,7 +152,9 @@
             <div class="footer-summary">
                 <h2>[Esc] Hacker Escape Rooms</h2>
                 <p>
-                    Esse ipsum tempor deserunt duis magna amet et mollit ea. Consectetur et labore cillum consectetur aliquip non consectetur dolore et Lorem aliquip minim. Magna ullamco voluptate do magna enim esse cupidatat ipsum culpa enim ut aliqua. Proident eu labore
+                    Esse ipsum tempor deserunt duis magna amet et mollit ea. Consectetur et labore cillum consectetur
+                    aliquip non consectetur dolore et Lorem aliquip minim. Magna ullamco voluptate do magna enim esse
+                    cupidatat ipsum culpa enim ut aliqua. Proident eu labore
                     duis id consequat ipsum occaecat adipisicing nostrud.
                 </p>
             </div>

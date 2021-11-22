@@ -1,3 +1,5 @@
+
+
 .bookingStep1 {
     z-index: 1;
     display: none;
@@ -21,7 +23,7 @@
     }
     .submitBtnStep1 {
         float: right;
-        margin-top: 170px;
+        margin-top: 120px;
         font-size: 1.2rem;
         font-weight: 700;
         border: none;
@@ -29,6 +31,9 @@
         padding: 1rem 3rem;
         background-color: $c-red;
         color: #ffff;
+    }
+    .lable{
+    font-size: 50px;
     }
 }
 
@@ -69,6 +74,10 @@
             font-size: 25px;
         }
     }
+    #selectTimes {
+        font-size: 25px;
+        border-radius: 4px;
+        }
     .inputParticipants {
         margin: 25px 0;
         font-size: 25px;
