@@ -14,7 +14,7 @@
 
     <!--header-->
     <header class="header">
-        <h1 class="logo">Hacker Escape Rooms</h1>
+        <h1 class="logo">Hacker Escape Roomss</h1>
     </header>
     <nav class="main-nav">
         <a class="main-nav-toggle" onclick="hideFilter()"></a>
@@ -58,6 +58,7 @@
         </select>
         </div>
         <a href="#" id="postBookingBtn" class="submitBtnStep2" onclick="giveTitleAndTrigger(event)">Submit</a>
+
     </div>
     <div class="bookingStep3">
         <h1>Thank you!</h1>
@@ -92,17 +93,17 @@
                 </div>
                 <div class="byRating">
                     <h4>By rating</h4>
-                    <i class="far fa-star star 1" id=1 onclick="giveStarAndGetNumbers(event)"></i>
-                    <i class="far fa-star star 2" id=2 onclick="giveStarAndGetNumbers(event)"></i>
-                    <i class="far fa-star star 3" id=3 onclick="giveStarAndGetNumbers(event)"></i>
-                    <i class="far fa-star star 4" id=4 onclick="giveStarAndGetNumbers(event)"></i>
-                    <i class="far fa-star star 5" id=5 onclick="giveStarAndGetNumbers(event)"></i>
-                    <span id="to">to</span>
-                    <i class="fas fa-star star" id=6 onclick="giveStarAndGetNumbers(event)"></i>
-                    <i class="fas fa-star star" id=7 onclick="giveStarAndGetNumbers(event)"></i>
-                    <i class="fas fa-star star" id=8 onclick="giveStarAndGetNumbers(event)"></i>
-                    <i class="fas fa-star star" id=9 onclick="giveStarAndGetNumbers(event)"></i>
-                    <i class="fas fa-star star" id=10 onclick="giveStarAndGetNumbers(event)"></i>
+                    <i class="far fa-star star minStar1" onclick="setStars(1, 'min')"></i>
+                    <i class="far fa-star star minStar2" onclick="setStars(2, 'min')"></i>
+                    <i class="far fa-star star minStar3" onclick="setStars(3, 'min')"></i>
+                    <i class="far fa-star star minStar4" onclick="setStars(4, 'min')"></i>
+                    <i class="far fa-star star minStar5" onclick="setStars(5, 'min')"></i>
+                    <span id ="to">to</span>
+                    <i class="fas fa-star star maxStar1" onclick="setStars(1, 'max')"></i>
+                    <i class="fas fa-star star maxStar2" onclick="setStars(2, 'max')"></i>
+                    <i class="fas fa-star star maxStar3" onclick="setStars(3, 'max')"></i>
+                    <i class="fas fa-star star maxStar4" onclick="setStars(4, 'max')"></i>
+                    <i class="fas fa-star star maxStar5" onclick="setStars(5, 'max')"></i>
                 </div>
                 <div class="byTags">
                     <h4>By tags</h4>
@@ -110,8 +111,10 @@
                 </div>
             </div>
             <div class="keyword">
-                <p>Or type to search for keyword</p>
-                <input type="text" id="inputSearch">
+                <div>
+                    <h4>Or type to search for keyword</h4>
+                    <input type="text" id="inputSearch" placeholder="Start typing to filter">
+                </div>
             </div>
         </div>
     </section>
@@ -184,16 +187,12 @@
         });
     </script>
     <script src="./script/script.js"></script>
-    <script src="./script/filterFiles/filterCheckbox.js"></script>
+    <script src="./script/filterFiles/getCheckboxes.js"></script>
     <script src="./script/filterFiles/filterShowAndClose.js"></script>
-    <script src="./script/filterFiles/filterTag.js"></script>
-    <script src="./script/filterFiles/filterRate.js"></script>
-    <script src="./script/filterFiles/printFilteredCard.js"></script>
-    <script src="./script/filterFiles/filterInput.js"></script>
-
-
-
-
+    <script src="./script/filterFiles/getTags.js"></script>
+    <script src="./script/filterFiles/getRates.js"></script>
+    <script src="./script/filterFiles/filterCards.js"></script>
+    <script src="./script/filterFiles/getInput.js"></script>
     <script src="./script/booking.js"></script>
 </body>
 

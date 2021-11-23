@@ -4,6 +4,17 @@
   font-size:35px;
 }
 .filterClass {
+  
+  align-items: center;
+  .first-page{
+    text-align:center;
+    font-weight: bold;
+    color:black;
+  }
+
+  .first-page:hover, .first-page:focus, .first-page:active{
+    text-decoration: none;
+  }
   #filterTitle{
     font-size:20px;
     color:rgb(85, 84, 84);
@@ -60,7 +71,6 @@
         background-color: $c-grey;
         color:white;
         border: 2px solid  $c-grey;
-
       }
     }
     .byRating{
@@ -81,13 +91,6 @@
       justify-content: center;
     }
   }
-  .keyword{
-    margin-top:50px;
-    text-align: center;
-    p{
-      margin-bottom:30px;
-    }
-  }
   .closeBtn{
     position:absolute;
     right:15px;
@@ -96,5 +99,33 @@
     cursor: pointer;
     color:grey;
   }
+  .keyword{
+    margin-top:50px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    h4{
+      margin-bottom:15px;
+    }
+    #inputSearch{
+      height:40px;
+      border:3px solid lightgray;
+      border-radius: 4px;
+      width:300px;
+      text-indent:15px;
+    }
+    #inputSearch::placeholder{
+      color: #C8D3DC;
+      font-size:1.3em;
+      font-weight: bold;
+    }
+  }
 }
 
+.noMatch{
+  margin-left:203px;
+  width:800px;
+  font-size:35px;
+  text-align: center;
+}
+//text
