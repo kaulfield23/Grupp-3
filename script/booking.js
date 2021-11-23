@@ -48,13 +48,13 @@ search.addEventListener('click', () => {
     result = originalUrl.concat(inputDate.value);
     fetch(result)
         .then(res => res.json())
-        .then(data => dropDown(data.slots))
+        .then(data => renderAvailableSlots(data.slots))
 
     return result;
 })
 
 //Loops time slots from booking API with choosed date and renders data with createElement 'option'.
-function dropDown(data) {
+function renderAvailableSlots(data) {
     let availableSlots = [];
     for (item of data) {
         availableSlots.push(item)
@@ -124,8 +124,4 @@ async function postBooking() {
 }
 
 //Left to do:
-// x Clean up code
-// x Rename variables
 // -Prevent step2 if inputdate is invalid
-// x Styling (selectTimes, add p to step1)
-// x Add comments
