@@ -45,17 +45,25 @@ const giveTitleAndTrigger = (event) => {
     }
     //gets available slots and pushes result to availableSlots array
 search.addEventListener('click', () => {
-    if (selectTimes.length !== 0) {
-        while (selectTimes.options.length > 0) {
-            selectTimes.remove(0);
+        let result;
+        if (selectTimes.length !== 0) {
+            while (selectTimes.options.length > 0) {
+                selectTimes.remove(0);
+            }
         }
-    }
-    let result = originalUrl.concat(inputDate.value);
-    fetch(result)
-        .then(res => res.json())
-        .then(data => dropDown(data.slots))
-    return result;
-})
+        result = originalUrl.concat(inputDate.value);
+        fetch(result)
+            .then(res => res.json())
+            .then(data => dropDown(data.slots))
+
+        return result;
+    })
+    /*const d = new Date();
+    console.log(d);
+    if (d < inputDate.value || availableSlots == false) {
+        alert('test');
+
+    }*/
 
 function dropDown(data) {
     let availableSlots = [];
@@ -72,7 +80,7 @@ function dropDown(data) {
 }
 
 function participantsDropDown() {
-    const selectParticipants = document.querySelector('#inputParticipants')
+    var selectParticipants = document.querySelector('#inputParticipants')
 
     if (inputParticipants.length !== 0) {
         while (inputParticipants.options.length > 0) {
@@ -85,10 +93,12 @@ function participantsDropDown() {
         let opt = count;
         let el = document.createElement("option");
         el.text = `${opt} participants`;
-        el.value = `${opt} participants`;
+        el.value = opt;
         selectParticipants.appendChild(el);
         count++;
     }
+
+
     return selectParticipants;
 }
 
@@ -97,27 +107,37 @@ postBookingBtn.addEventListener('click', postBooking);
 
 async function postBooking() {
     const selectParticipants = document.querySelector('#inputParticipants').value;
-    let name = document.querySelector('#name').value;
-    let email = document.querySelector('#email').value;
-    let result = originalUrl.concat(inputDate.value);
-    console.log(name.value);
-    console.log(email.value);
-    console.log(selectParticipants.value);
+    let namex = document.querySelector('#name').value;
+    let emailx = document.querySelector('#email').value;
+    let inputDate = document.querySelector('#inputDate').value;
+    let selectTimes = document.querySelector('#selectTimes').value;
     let url = 'https://lernia-sjj-assignments.vercel.app/api/booking/reservations';
+
     const response = await fetch(url, {
-        method: 'POST',
-        mode: 'cors',
-        credential: 'same-origin',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            name: name,
-            email: email,
-            date: inputDate.value,
-            participants: selectParticipants
-        })
-    }).then(res => {
-        return response.json()
-    }).then(data => console.log(data)).catch(error => console.log('ERROR'))
+            method: 'POST',
+            mode: 'cors',
+            credential: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer',
+            body: JSON.stringify({
+                name: namex,
+                email: emailx,
+                date: inputDate,
+                time: selectTimes,
+                participants: parseInt(selectParticipants)
+            })
+
+        }) //.then(res => {
+    return response.json();
+    //}).then(data => console.log(data)).catch(error => console.log('ERROR'))
 }
+
+//Left to do:
+// -Clean up code
+// -Rename variables
+// -Prevent step2 if inputdate is invalid
+// -Styling (selectTimes, add p to step1)
+// -Add comments
