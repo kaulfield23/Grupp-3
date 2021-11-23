@@ -137,3 +137,4 @@ async function postBooking() {
 // -Prevent step2 if inputdate is invalid
 // -Styling (selectTimes, add p to step1)
 // -Add comments
+// blabla
