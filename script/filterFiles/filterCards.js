@@ -1,5 +1,11 @@
 //print filtered cards in hmtl
-function printFilteredCard() {
+import {checkBoxFilters} from './getCheckboxes.js'
+import {tagFilter} from './getTags.js';
+import {originalData} from './filterShowAndClose.js';
+import {rate} from './getRates.js';
+import {inputText} from './getInput.js';
+
+export function printFilteredCard() {
   let filtered = originalData.filter((card) => {
     return (
         checkCheckBox(card) && checkTag(card) && checkRate(card) && checkInput(card)
@@ -23,8 +29,8 @@ function checkTag(card){
       (tagFilter.every((value) => card.labels.includes(value)
       &&rate.min <= card.rating && card.rating <= rate.max)))
   )
-
 }
+
 function checkRate(card){
   return(
     (rate.min <= card.rating && card.rating <= rate.max)
@@ -33,7 +39,7 @@ function checkRate(card){
 
 function checkInput(card){
   return(
-    (card.title.toLowerCase().includes(inputSearchContainer)
-    || card.description.toLowerCase().includes(inputSearchContainer))
+    (card.title.toLowerCase().includes(inputText)
+    || card.description.toLowerCase().includes(inputText))
   )
 }

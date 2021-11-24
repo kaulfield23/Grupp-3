@@ -18,7 +18,7 @@
         <h1 class="logo">Hacker Escape Rooms</h1>
     </header>
     <nav class="main-nav">
-        <a class="main-nav-toggle" onclick="hideFilter()"></a>
+        <a class="main-nav-toggle hide"></a>
         <ul class="main-menu">
             <li><a href="#">Play online</a></li>
             <li><a href="#">Play on-site</a></li>
@@ -70,39 +70,39 @@
     <h2 id="ourChallenges">Our challenges</h2>
     <section class="filterClass">
         <div id="filterBtnCenter">
-            <a href="#" class="filterBtn" onclick="showAndCloseFilter(event)">Filter challenges</a>
+            <a href="#" class="filterBtn showAndCloseFilter">Filter challenges</a>
         </div>
         <!--a link to go back to the main page-->
         <a class="first-page" href="firstPage.html">Back to main page</a>
         <div class="filter">
             <span id=filterTitle>Filter challenges</span>
-            <i class="fas fa-times closeBtn" onclick="showAndCloseFilter(event)"></i>
+            <i class="fas fa-times closeBtn showAndCloseFilter"></i>
             <div class="threeTypes">
                 <div class="byType">
                     <h4>By type</h4>
                     <div>
-                        <input type="checkbox" name="online" id="online" onclick="onClickCheckbox(event)">
+                        <input type="checkbox" class="checkInput" name="online" id="online">
                         <label for="online">Include online challenges</label>
                     </div>
                     <div>
-                        <input type="checkbox" name="onsite" id="onsite" onclick="onClickCheckbox(event)">
+                        <input type="checkbox" class="checkInput" name="onsite" id="onsite">
                         <label for="onsite">Include on-site challenges</label>
                     </div>
                     <div class="showResult"></div>
                 </div>
                 <div class="byRating">
                     <h4>By rating</h4>
-                    <i class="far fa-star star minStar1" onclick="setStars(1, 'min')"></i>
-                    <i class="far fa-star star minStar2" onclick="setStars(2, 'min')"></i>
-                    <i class="far fa-star star minStar3" onclick="setStars(3, 'min')"></i>
-                    <i class="far fa-star star minStar4" onclick="setStars(4, 'min')"></i>
-                    <i class="far fa-star star minStar5" onclick="setStars(5, 'min')"></i>
+                    <i class="far fa-star star minStar1" rate="min-1"></i>
+                    <i class="far fa-star star minStar2" rate="min-2"></i>
+                    <i class="far fa-star star minStar3" rate="min-3"></i>
+                    <i class="far fa-star star minStar5" rate="min-5"></i>
+                    <i class="far fa-star star minStar4" rate="min-4"></i>
                     <span id="to">to</span>
-                    <i class="fas fa-star star maxStar1" onclick="setStars(1, 'max')"></i>
-                    <i class="fas fa-star star maxStar2" onclick="setStars(2, 'max')"></i>
-                    <i class="fas fa-star star maxStar3" onclick="setStars(3, 'max')"></i>
-                    <i class="fas fa-star star maxStar4" onclick="setStars(4, 'max')"></i>
-                    <i class="fas fa-star star maxStar5" onclick="setStars(5, 'max')"></i>
+                    <i class="fas fa-star star maxStar1" rate="max-1"></i>
+                    <i class="fas fa-star star maxStar2" rate="max-2"></i>
+                    <i class="fas fa-star star maxStar3" rate="max-3"></i>
+                    <i class="fas fa-star star maxStar4" rate="max-4"></i>
+                    <i class="fas fa-star star maxStar5" rate="max-5"></i>
                 </div>
                 <div class="byTags">
                     <h4>By tags</h4>
@@ -189,12 +189,12 @@
     </script>
 
     <script src="./script/secondPage.js"></script>
-    <script src="./script/filterFiles/getCheckboxes.js"></script>
-    <script src="./script/filterFiles/filterShowAndClose.js"></script>
-    <script src="./script/filterFiles/getTags.js"></script>
-    <script src="./script/filterFiles/getRates.js"></script>
-    <script src="./script/filterFiles/filterCards.js"></script>
-    <script src="./script/filterFiles/getInput.js"></script>
+    <script type ="module" src="./script/filterFiles/getCheckboxes.js"></script>
+    <script type ="module" src="./script/filterFiles/filterShowAndClose.js"></script>
+    <script type ="module" src="./script/filterFiles/getTags.js"></script>
+    <script type ="module" src="./script/filterFiles/getRates.js"></script>
+    <script type ="module" src="./script/filterFiles/filterCards.js"></script>
+    <script type ="module" src="./script/filterFiles/getInput.js"></script>
     <script src="./script/booking.js"></script>
 </body>
 

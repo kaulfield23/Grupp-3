@@ -1,34 +1,39 @@
 //open and close filter
-const showAndCloseFilter = (event) => {
-  const filter = document.querySelector(".filter");
-  const filterBtn = document.querySelector(".filterBtn");
-  if (event.target.classList.contains("filterBtn")) {
-    filterBtn.style.display = "none";
-    filter.style.display = "block";
-    generateTags();
-  } else {
-    filter.style.display = "none";
-    filterBtn.style.display = "block";
-  }
-};
+import {filterTags} from './getTags.js'
+const showAndClose = document.querySelectorAll('.showAndCloseFilter');
+showAndClose.forEach((element) =>{
+  element.addEventListener('click', (event) =>{
+    const filter = document.querySelector(".filter");
+    const filterBtn = document.querySelector(".filterBtn");
+    if (event.target.classList.contains("filterBtn")) {
+      filterBtn.style.display = "none";
+      filter.style.display = "block";
+      generateTags();
+    } else {
+      filter.style.display = "none";
+      filterBtn.style.display = "block";
+    }
+
+  })
+})
 
 //when you open the nav menu from hamburger, then it hides filter
-const hideFilter = () => {
+document.querySelector('.hide').addEventListener('click', () =>{
   const filter = document.querySelector(".filter");
-
   filter.style.display === "none"
     ? (filterBtn.style.display = "block")
     : (filter.style.display = "none");
-};
+})
+
 
 //save original data to an array
-let originalData = [];
+export let originalData = [];
 getChallenges().then((data) => {
   originalData = data;
 });
 
 //generate tags
-let tagName = [];
+export let tagName = [];
 const generateTags = () => {
   if (tagName.length === 0) {
     originalData.forEach((card) =>
