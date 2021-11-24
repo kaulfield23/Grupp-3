@@ -1,26 +1,14 @@
-function printFilteredCard(msg) {
-  let item = JSON.parse(JSON.stringify(dataForFilter));
-  let filtered = item.filter((card) => {
+//print filtered cards in hmtl
+function printFilteredCard() {
+  let filtered = originalData.filter((card) => {
     return (
         checkCheckBox(card) && checkTag(card) && checkRate(card) && checkInput(card)
     );
   });
-  let result = JSON.stringify(filtered);
-  if (filtered.length === 0) {
-    result = "No matching result";
-  }
-  
-  // getData2('filter', filtered)
-
-  if(msg ==="close"){
-    showSelectedTags.innerHTML ="";
-    filter.style.display = "none";
-    filterBtn.style.display="block"
-  }
-
   buildCardsForChallenges(filtered);
 }
 
+//4 functions to for filtering.
 function checkCheckBox(card){
   return(
     (checkBoxFilters.length === 0 ||
@@ -49,5 +37,3 @@ function checkInput(card){
     || card.description.toLowerCase().includes(inputSearchContainer))
   )
 }
-
-//text

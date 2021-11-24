@@ -1,5 +1,4 @@
 let tagFilter = [];
-let showFilteredTags = [];
 //change the background color of tag button when user click it
 const toggleBackgroundColor = (event) => {
   let btn = event.target;
@@ -20,13 +19,9 @@ const addFilteredTag = (event) => {
   }
 };
 
-//print the new array which has filtered tags
-
 //show only selected tags in html
 const filterTags = (event) => {
   toggleBackgroundColor(event);
   addFilteredTag(event);
   printFilteredCard(event);
 };
-
-//text

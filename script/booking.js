@@ -10,22 +10,20 @@ let originalUrl = 'https://lernia-sjj-assignments.vercel.app/api/booking/availab
 let selectTimes = document.querySelector('#selectTimes');
 let option = document.querySelectorAll('option');
 
-//Notes: users input, compare with title description. If exists return it.*/
 
-//use this below
 let titleName;
 let participant = [];
-
+//Opens booking-modal and gets title and participants from the chosen challenge
 const giveTitleAndTrigger = (event) => {
         let eventName = event.target.className;
         if (eventName === "challenge-cta") {
             titleName = event.target.parentNode.children[1].textContent;
             roomTitle.innerHTML = `Book room - ${ titleName }`;
             bookingStep1.style.display = "block";
-            let a = event.target.parentNode.children[2].lastElementChild.innerText;
-            let blah = a.split(' ');
-            let ooo = [];
-            participant = blah.concat(ooo);
+            let getTitle = event.target.parentNode.children[2].lastElementChild.innerText;
+            let splitgetParts = getTitle.split(' ');
+            let partsContainer = [];
+            participant = splitgetParts.concat(partsContainer);
             participant.pop();
         } else if (eventName === "submitBtnStep1") {
             bookingStep1.style.display = "none";
@@ -39,21 +37,24 @@ const giveTitleAndTrigger = (event) => {
             bookingStep3.style.display = "none";
         }
     }
-    //gets available slots and pushes result to availableSlots array
+    //Checks if selectTimes has any old values and removes them then gets time slots from booking API. 
 search.addEventListener('click', () => {
+    let result;
     if (selectTimes.length !== 0) {
         while (selectTimes.options.length > 0) {
             selectTimes.remove(0);
         }
     }
-    let result = originalUrl.concat(inputDate.value);
+    result = originalUrl.concat(inputDate.value);
     fetch(result)
         .then(res => res.json())
-        .then(data => dropDown(data.slots))
+        .then(data => renderAvailableSlots(data.slots))
+
     return result;
 })
 
-function dropDown(data) {
+//Loops time slots from booking API with choosed date and renders data with createElement 'option'.
+function renderAvailableSlots(data) {
     let availableSlots = [];
     for (item of data) {
         availableSlots.push(item)
@@ -66,54 +67,61 @@ function dropDown(data) {
         selectTimes.appendChild(el);
     }
 }
-
+//Gets min-max participants from chosen challenge. Removes unwanted strings and renders options to user  
 function participantsDropDown() {
-    const selectParticipants = document.querySelector('#inputParticipants')
+    let selectParticipants = document.querySelector('#inputParticipants')
 
     if (inputParticipants.length !== 0) {
         while (inputParticipants.options.length > 0) {
             inputParticipants.remove(0);
         }
     }
-    let x = participant.splice(1, 1);
+    //let x = 
+    participant.splice(1, 1);
     let count = parseInt(participant[0]);
     for (i = parseInt(participant[0]); i <= parseInt(participant[1]); i++) {
         let opt = count;
         let el = document.createElement("option");
         el.text = `${opt} participants`;
-        el.value = `${opt} participants`;
+        el.value = opt;
         selectParticipants.appendChild(el);
         count++;
     }
     return selectParticipants;
 }
 
+//Collects name, email, date, selected time, participants and posts to reservation API with JSON
 let postBookingBtn = document.querySelector('#postBookingBtn');
 postBookingBtn.addEventListener('click', postBooking);
-
 async function postBooking() {
-    const selectParticipants = document.querySelector('#inputParticipants').value;
-    let name = document.querySelector('#name').value;
-    let email = document.querySelector('#email').value;
-    let result = originalUrl.concat(inputDate.value);
-    console.log(name.value);
-    console.log(email.value);
-    console.log(selectParticipants.value);
+    const selectParticipants = document.querySelector('#inputParticipants');
+    let name = document.querySelector('#name');
+    let email = document.querySelector('#email');
+    let inputDate = document.querySelector('#inputDate');
+    let selectTimes = document.querySelector('#selectTimes');
     let url = 'https://lernia-sjj-assignments.vercel.app/api/booking/reservations';
+
     const response = await fetch(url, {
-        method: 'POST',
-        mode: 'cors',
-        credential: 'same-origin',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            name: name,
-            email: email,
-            date: inputDate.value,
-            participants: selectParticipants
-        })
-    }).then(res => {
-        return response.json()
-    }).then(data => console.log(data)).catch(error => console.log('ERROR'))
+            method: 'POST',
+            mode: 'cors',
+            credential: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer',
+            body: JSON.stringify({
+                name: name.value,
+                email: email.value,
+                date: inputDate.value,
+                time: selectTimes.value,
+                participants: parseInt(selectParticipants.value)
+            })
+
+        }) //.then(res => {
+    return response.json();
+    //}).then(data => console.log(data)).catch(error => console.log('ERROR'))
 }
+
+//Left to do:
+// -Prevent step2 if inputdate is invalid

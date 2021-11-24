@@ -1,4 +1,3 @@
-
 //show selected checkbox values when user click the checkbox
 let checkBoxFilters = [];
 const onClickCheckbox = (event) => {
@@ -10,8 +9,6 @@ const onClickCheckbox = (event) => {
     } else {
         checkBoxFilters.splice(checkBoxFilters.indexOf(eventId), 1);
     }
-
-
   printFilteredCard();
 };
 

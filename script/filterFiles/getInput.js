@@ -1,8 +1,7 @@
- 
-let inputSearchField = document.querySelector('#inputSearch');
 let inputSearchContainer = '';
-
+//get input text value.
 inputSearch.addEventListener('keyup', () => {
+    let inputSearchField = document.querySelector('#inputSearch');
     inputSearchContainer = inputSearchField.value.trim().toLowerCase();
     // let matches = cards.filter(state => {
     //     const regex = new RegExp(`^${inputSearchContainer}`, 'gi');
@@ -10,5 +9,3 @@ inputSearch.addEventListener('keyup', () => {
     // });
     printFilteredCard();
 })
-
-//text

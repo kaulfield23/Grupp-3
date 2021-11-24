@@ -1,7 +1,7 @@
 //open and close filter
-const filter = document.querySelector(".filter");
-const filterBtn = document.querySelector(".filterBtn");
 const showAndCloseFilter = (event) => {
+  const filter = document.querySelector(".filter");
+  const filterBtn = document.querySelector(".filterBtn");
   if (event.target.classList.contains("filterBtn")) {
     filterBtn.style.display = "none";
     filter.style.display = "block";
@@ -9,36 +9,29 @@ const showAndCloseFilter = (event) => {
   } else {
     filter.style.display = "none";
     filterBtn.style.display = "block";
-    printFilteredCard('close');
   }
 };
 
-//when you open the nav menu, then it hides filter
+//when you open the nav menu from hamburger, then it hides filter
 const hideFilter = () => {
+  const filter = document.querySelector(".filter");
+
   filter.style.display === "none"
     ? (filterBtn.style.display = "block")
     : (filter.style.display = "none");
 };
 
-//fetching data
-async function getTags() {
-  const url = "https://lernia-sjj-assignments.vercel.app/api/challenges";
-  const response = await fetch(url);
-  const data = await response.json();
-  return data;
-}
-
-let dataForFilter = [];
-getTags().then((data) => {
-  dataForFilter = data.challenges;
+//save original data to an array
+let originalData = [];
+getChallenges().then((data) => {
+  originalData = data;
 });
 
 //generate tags
 let tagName = [];
 const generateTags = () => {
-  let item = JSON.parse(JSON.stringify(dataForFilter));
   if (tagName.length === 0) {
-    item.forEach((card) =>
+    originalData.forEach((card) =>
       card.labels.forEach((value) => {
         if (!tagName.includes(value)) {
           tagName.push(value);
@@ -55,5 +48,3 @@ const generateTags = () => {
     }
   }
 };
-
-//text

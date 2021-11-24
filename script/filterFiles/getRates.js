@@ -25,5 +25,3 @@ const setStars = (inputNum, limit) => {
   rate[limit] = inputNum;
   printFilteredCard();
 }
-
-//text
