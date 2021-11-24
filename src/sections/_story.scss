@@ -1,6 +1,6 @@
 .story {
  @include section;
-   display: flex;
+  display: flex;
   flex-direction: column;
   
   background-color: $c-darkblue;
