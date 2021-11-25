@@ -25,7 +25,7 @@ const giveTitleAndTrigger = (event) => {
             let partsContainer = [];
             participant = splitgetParts.concat(partsContainer);
             participant.pop();
-        } else if (eventName === "submitBtnStep1") {
+        } else if (eventName === "submitBtnStep1" || eventName === 'submitBtnStep1FirstPage') {
             bookingStep1.style.display = "none";
             bookingStep2.style.display = "block";
             participantsDropDown();
