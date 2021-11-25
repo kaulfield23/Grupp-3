@@ -78,14 +78,12 @@ function participantsDropDown() {
     }
     //let x = 
     participant.splice(1, 1);
-    let count = parseInt(participant[0]);
     for (i = parseInt(participant[0]); i <= parseInt(participant[1]); i++) {
-        let opt = count;
+        let opt = i;
         let el = document.createElement("option");
         el.text = `${opt} participants`;
         el.value = opt;
         selectParticipants.appendChild(el);
-        count++;
     }
     return selectParticipants;
 }
