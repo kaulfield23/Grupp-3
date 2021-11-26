@@ -28,7 +28,7 @@ img {
   height: 80px;
   line-height: 1em;
   font-size: 1.6rem;
-  background-image: url("/images/logo.png");
+  background-image: url("./images/logo.png");
   background-size: 120px;
   background-repeat: no-repeat;
 }
@@ -685,7 +685,7 @@ img {
 }
 
 .hero-image {
-  background-image: url("/images/hero.png");
+  background-image: url("./images/hero.png");
   background-size: cover;
   height: 40vh;
 }
