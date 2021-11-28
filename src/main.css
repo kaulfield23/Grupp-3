@@ -545,124 +545,120 @@ img {
   z-index: 1;
   display: none;
   position: absolute;
+  background-color: #ffff;
+  border: 3px solid lightgrey;
+  padding: 25px;
   width: 800px;
-  height: 400px;
+  height: 460px;
   top: 50%;
   left: 50%;
   margin-top: -250px;
   margin-left: -400px;
-  background-color: #ffff;
-  border: 3px solid lightgrey;
-  padding: 25px;
 }
-.bookingStep1 a {
+.bookingStep1 .bookingStep1Content {
+  height: 400px;
+}
+.bookingStep1 .bookingStep1Content a {
   text-decoration: none;
 }
-.bookingStep1 p {
+.bookingStep1 .bookingStep1Content p {
   margin: 25px 0;
 }
-.bookingStep1 .inputStep1 {
+.bookingStep1 .bookingStep1Content .inputStep1 {
   margin: 40px 0;
   font-size: 25px;
   font-weight: 700;
 }
-.bookingStep1 .inputStep1 input {
+.bookingStep1 .bookingStep1Content .inputStep1 input {
   font-size: 25px;
 }
-.bookingStep1 .submitBtnStep1FirstPage {
-  float: right;
-  margin-top: 106px;
+.bookingStep1 .submitStep1-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.bookingStep1 .submitStep1-container .submitBtnStep1 {
+  text-decoration: none;
   font-size: 1.2rem;
   font-weight: 700;
   border: none;
   border-radius: 4px;
   padding: 1rem 3rem;
-  background-color: #e3170a;
   color: #ffff;
-}
-.bookingStep1 .submitBtnStep1 {
-  float: right;
-  margin-top: 38px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  border: none;
-  border-radius: 4px;
-  padding: 1rem 3rem;
   background-color: #e3170a;
-  color: #ffff;
-}
-.bookingStep1 .lable {
-  font-size: 50px;
 }
 
 .bookingStep2 {
   z-index: 1;
   display: none;
   position: absolute;
+  background-color: #ffff;
   border: 3px solid lightgrey;
+  padding: 25px;
   width: 800px;
-  height: 400px;
+  height: 460px;
   top: 50%;
   left: 50%;
   margin-top: -250px;
   margin-left: -400px;
-  padding: 25px;
-  background-color: #ffff;
 }
-.bookingStep2 a {
+.bookingStep2 .bookingStep2Content {
+  height: 400px;
+}
+.bookingStep2 .bookingStep2Content .roomTitleStep2 {
+  margin-bottom: 25px;
+}
+.bookingStep2 .bookingStep2Content .nameInput {
+  font-size: 25px;
+}
+.bookingStep2 .bookingStep2Content .nameInput label {
+  font-weight: 700;
+}
+.bookingStep2 .bookingStep2Content #selectTimes {
+  font-size: 25px;
+  border-radius: 4px;
+}
+.bookingStep2 .bookingStep2Content .emailInput {
+  margin: 25px 0;
+  font-size: 25px;
+  font-weight: 700;
+}
+.bookingStep2 .bookingStep2Content .emailInput input {
+  font-size: 25px;
+}
+.bookingStep2 .bookingStep2Content .inputTime {
+  margin: 25px 0;
+  font-size: 25px;
+  font-weight: 700;
+}
+.bookingStep2 .bookingStep2Content .inputTime input {
+  font-size: 25px;
+}
+.bookingStep2 .bookingStep2Content #selectTimes {
+  font-size: 25px;
+  border-radius: 4px;
+}
+.bookingStep2 .bookingStep2Content .inputParticipants {
+  margin: 25px 0;
+  font-size: 25px;
+  font-weight: 700;
+}
+.bookingStep2 .bookingStep2Content .inputParticipants option,
+.bookingStep2 .bookingStep2Content .inputParticipants select {
+  font-size: 25px;
+}
+.bookingStep2 .submitStep2-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.bookingStep2 .submitStep2-container .submitBtnStep2 {
   text-decoration: none;
-}
-.bookingStep2 .nameInput {
-  margin: 25px 0;
-  font-size: 25px;
-  font-weight: 700;
-}
-.bookingStep2 .nameInput input {
-  font-size: 25px;
-}
-.bookingStep2 #selectTimes {
-  font-size: 25px;
-  border-radius: 4px;
-}
-.bookingStep2 .emailInput {
-  margin: 25px 0;
-  font-size: 25px;
-  font-weight: 700;
-}
-.bookingStep2 .emailInput input {
-  font-size: 25px;
-}
-.bookingStep2 .inputTime {
-  margin: 25px 0;
-  font-size: 25px;
-  font-weight: 700;
-}
-.bookingStep2 .inputTime input {
-  font-size: 25px;
-}
-.bookingStep2 #selectTimes {
-  font-size: 25px;
-  border-radius: 4px;
-}
-.bookingStep2 .inputParticipants {
-  margin: 25px 0;
-  font-size: 25px;
-  font-weight: 700;
-}
-.bookingStep2 .inputParticipants option,
-.bookingStep2 .inputParticipants select {
-  font-size: 25px;
-}
-.bookingStep2 .submitBtnStep2 {
-  float: right;
-  margin: -73px 0;
   font-size: 1.2rem;
   font-weight: 700;
   border: none;
   border-radius: 4px;
   padding: 1rem 3rem;
-  background-color: #e3170a;
   color: #ffff;
+  background-color: #e3170a;
 }
 
 .bookingStep3 {
