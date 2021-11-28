@@ -2,9 +2,12 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="./src/main.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/07a95dbd5e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./src/main.css">
 </head>
 
 <body>
@@ -70,36 +73,44 @@
 
     <!---booking-system-->
     <div class="bookingStep1">
-        <h1 class="roomTitle"></h1>
-        <p>What date would you like to come?</p>
-        <div class="inputStep1">
-            <label for="step1Date">
-                    Date
-                </label><br>
-            <input type="date" name="step1Date" id="inputDate">
+        <div class="bookingStep1Content">
+            <h1 class="roomTitle"></h1>
+            <p>What date would you like to come?</p>
+            <div class="inputStep1">
+                <label for="step1Date">
+                        Date
+                    </label><br>
+                <input type="date" name="step1Date" id="inputDate">
+            </div>
         </div>
-        <a href="#" class="submitBtnStep1FirstPage" id="search" onclick="giveTitleAndTrigger(event)">Submit</a>
+        <div class="submitStep1-container">
+            <a href="#" class="submitBtnStep1" id="search" onclick="giveTitleAndTrigger(event)">Submit</a>
+        </div>
     </div>
     <div class="bookingStep2">
-        <h1 class="roomTitleStep2"></h1>
-        <div class="nameInput">
-            <label for="nameInput">Name</label><br>
-            <input type="name" name="nameInput" id="name"><br>
+        <div class="bookingStep2Content">
+            <h1 class="roomTitleStep2"></h1>
+            <div class="nameInput">
+                <label for="nameInput">Name</label><br>
+                <input type="name" name="nameInput" id="name" class="nameInput"><br>
+            </div>
+            <div class="emailInput">
+                <label for="emailInput">E-mail</label><br>
+                <input type="email" id="email"><br>
+            </div>
+            <div class="inputTime">
+                <label for="inputTime">What time?</label><br>
+                <select id="selectTimes">Select available times</select>
+            </div>
+            <div class="inputParticipants">
+                <label for="inputParticipants">How many participants?</label><br>
+                <select name="inputParticipants" id="inputParticipants">
+            </select>
+            </div>
         </div>
-        <div class="emailInput">
-            <label for="emailInput">E-mail</label><br>
-            <input type="email" id="email"><br>
+        <div class="submitStep2-container">
+            <a href="#" id="postBookingBtn" class="submitBtnStep2" onclick="giveTitleAndTrigger(event)">Submit</a>
         </div>
-        <div class="inputTime">
-            <label for="inputTime">What time?</label><br>
-            <select id="selectTimes">Select available times</select>
-        </div>
-        <div class="inputParticipants">
-            <label for="inputParticipants">How many participants?</label><br>
-            <select name="inputParticipants" id="inputParticipants">
-                </select>
-        </div>
-        <a href="#" id="postBookingBtn" class="submitBtnStep2" onclick="giveTitleAndTrigger(event)">Submit</a>
 
     </div>
     <div class="bookingStep3">

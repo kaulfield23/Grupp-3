@@ -2,53 +2,46 @@
     z-index: 1;
     display: none;
     position: absolute;
+    background-color: #ffff;
+    border: 3px solid lightgrey;
+    padding: 25px;
+    //width: 40rem;
     width: 800px;
-    height: 400px;
+    height: 460px;
     top: 50%;
     left: 50%;
     margin-top: -250px;
     margin-left: -400px;
-    background-color: #ffff;
-    border: 3px solid lightgrey;
-    padding: 25px;
-    a {
-        text-decoration: none;
-    }
-    p {
-        margin: 25px 0;
-    }
-    .inputStep1 {
-        margin: 40px 0;
-        font-size: 25px;
-        font-weight: 700;
-        input {
+    .bookingStep1Content {
+        height: 400px;
+        a {
+            text-decoration: none;
+        }
+        p {
+            margin: 25px 0;
+        }
+        .inputStep1 {
+            margin: 40px 0;
             font-size: 25px;
+            font-weight: 700;
+            input {
+                font-size: 25px;
+            }
         }
     }
-    .submitBtnStep1FirstPage {
-        float: right;
-        margin-top: 106px;
-        font-size: 1.2rem;
-        font-weight: 700;
-        border: none;
-        border-radius: 4px;
-        padding: 1rem 3rem;
-        background-color: $c-red;
-        color: #ffff;
-    }
-    .submitBtnStep1 {
-        float: right;
-        margin-top: 38px;
-        font-size: 1.2rem;
-        font-weight: 700;
-        border: none;
-        border-radius: 4px;
-        padding: 1rem 3rem;
-        background-color: $c-red;
-        color: #ffff;
-    }
-    .lable {
-        font-size: 50px;
+    .submitStep1-container {
+        display: flex;
+        justify-content: flex-end;
+        .submitBtnStep1 {
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 4px;
+            padding: 1rem 3rem;
+            color: #ffff;
+            background-color: $c-red;
+        }
     }
 }
 
@@ -56,69 +49,75 @@
     z-index: 1;
     display: none;
     position: absolute;
+    background-color: #ffff;
     border: 3px solid lightgrey;
+    padding: 25px;
+    //width: 40rem;
     width: 800px;
-    height: 400px;
+    height: 460px;
     top: 50%;
     left: 50%;
     margin-top: -250px;
     margin-left: -400px;
-    padding: 25px;
-    background-color: #ffff;
-    a {
-        text-decoration: none;
-    }
-    .nameInput {
-        margin: 25px 0;
-        font-size: 25px;
-        font-weight: 700;
-        input {
+    .bookingStep2Content {
+        height: 400px;
+        .roomTitleStep2 {
+            margin-bottom: 25px;
+        }
+        .nameInput {
+            // margin: 25px 0;
             font-size: 25px;
+            label {
+                font-weight: 700;
+            }
+        }
+        #selectTimes {
+            font-size: 25px;
+            border-radius: 4px;
+        }
+        .emailInput {
+            margin: 25px 0;
+            font-size: 25px;
+            font-weight: 700;
+            input {
+                font-size: 25px;
+            }
+        }
+        .inputTime {
+            margin: 25px 0;
+            font-size: 25px;
+            font-weight: 700;
+            input {
+                font-size: 25px;
+            }
+        }
+        #selectTimes {
+            font-size: 25px;
+            border-radius: 4px;
+        }
+        .inputParticipants {
+            margin: 25px 0;
+            font-size: 25px;
+            font-weight: 700;
+            option,
+            select {
+                font-size: 25px;
+            }
         }
     }
-    #selectTimes {
-        font-size: 25px;
-        border-radius: 4px;
-    }
-    .emailInput {
-        margin: 25px 0;
-        font-size: 25px;
-        font-weight: 700;
-        input {
-            font-size: 25px;
+    .submitStep2-container {
+        display: flex;
+        justify-content: flex-end;
+        .submitBtnStep2 {
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 4px;
+            padding: 1rem 3rem;
+            color: #ffff;
+            background-color: $c-red;
         }
-    }
-    .inputTime {
-        margin: 25px 0;
-        font-size: 25px;
-        font-weight: 700;
-        input {
-            font-size: 25px;
-        }
-    }
-    #selectTimes {
-        font-size: 25px;
-        border-radius: 4px;
-    }
-    .inputParticipants {
-        margin: 25px 0;
-        font-size: 25px;
-        font-weight: 700;
-        option,
-        select {
-            font-size: 25px;
-        }
-    }
-    .submitBtnStep2 {
-        float: right;
-        margin: -73px 0;
-        font-size: 1.2rem;
-        font-weight: 700;
-        border: none;
-        border-radius: 4px;
-        padding: 1rem 3rem;
-        background-color: $c-red;
-        color: #ffff;
     }
 }
 
