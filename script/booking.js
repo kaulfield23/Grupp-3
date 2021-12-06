@@ -76,7 +76,6 @@ function participantsDropDown() {
             inputParticipants.remove(0);
         }
     }
-    //let x = 
     participant.splice(1, 1);
     for (i = parseInt(participant[0]); i <= parseInt(participant[1]); i++) {
         let opt = i;
@@ -98,28 +97,26 @@ async function postBooking() {
     let inputDate = document.querySelector('#inputDate');
     let selectTimes = document.querySelector('#selectTimes');
     let url = 'https://lernia-sjj-assignments.vercel.app/api/booking/reservations';
+    let phoneInput = document.querySelector('#phoneInput');
 
     const response = await fetch(url, {
-            method: 'POST',
-            mode: 'cors',
-            credential: 'same-origin',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            redirect: 'follow',
-            referrerPolicy: 'no-referrer',
-            body: JSON.stringify({
-                name: name.value,
-                email: email.value,
-                date: inputDate.value,
-                time: selectTimes.value,
-                participants: parseInt(selectParticipants.value)
-            })
+        method: 'POST',
+        mode: 'cors',
+        credential: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify({
+            name: name.value,
+            //phone: phoneInput.value,
+            email: email.value,
+            date: inputDate.value,
+            time: selectTimes.value,
+            participants: parseInt(selectParticipants.value)
+        })
 
-        }) //.then(res => {
+    })
     return response.json();
-    //}).then(data => console.log(data)).catch(error => console.log('ERROR'))
 }
-
-//Left to do:
-// -Prevent step2 if inputdate is invalid
