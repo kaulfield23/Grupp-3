@@ -56,6 +56,15 @@ async function init() {
     initialCard.remove();
 
     const data = await getChallenges();
+    const sortIcon = document.querySelectorAll('.sortIcon')
+    sortIcon.forEach((element) =>{
+        element.onclick = (event) => {
+      let sortType = event.target.getAttribute("sortType");
+            const container = document.querySelector("section.challenges");
+            container.innerHTML = "";
+            buildCardsForChallenges(sort(data, sortType, selectType));
+        }
+    })
     buildCardsForChallenges(data);
 }
 
