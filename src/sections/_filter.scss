@@ -25,7 +25,14 @@
   padding-top: 40px;
   .filterBtn {
     @include redBtn;
+
+    &:hover{
+     background-color: darken($c-red, 5);
+    }
   }
+  
+  
+  
   .first-page{
     display: flex;
     justify-content: center;
