@@ -2,7 +2,7 @@
     text-align: center;
     .all-challenges {
         @include redBtn;
-        background-color: $c-darkblue;
+        background-color: $c-new;
         padding: 10px;
     }
     .all-challenges:hover {
