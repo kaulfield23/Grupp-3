@@ -466,11 +466,25 @@ img {
 .filterClass .threeTypes .byType div {
   margin: 5px 0;
 }
+@media screen and (max-width: 650px) {
+  .filterClass .threeTypes {
+    display: flex;
+    flex-direction: column;
+  }
+  .filterClass .threeTypes .types {
+    margin: 20px 0;
+  }
+}
 .filterClass .threeTypes h4 {
   margin-bottom: 15px;
 }
 .filterClass .threeTypes .byTags {
   width: 400px;
+}
+@media screen and (max-width: 650px) {
+  .filterClass .threeTypes .byTags {
+    width: 250px;
+  }
 }
 .filterClass .threeTypes .byTags .tags {
   margin: 0 8px 8px 0;
@@ -527,6 +541,11 @@ img {
   border-radius: 4px;
   width: 300px;
   text-indent: 15px;
+}
+@media screen and (max-width: 650px) {
+  .filterClass .keyword #inputSearch {
+    width: 200px;
+  }
 }
 .filterClass .keyword #inputSearch::placeholder {
   color: #C8D3DC;
