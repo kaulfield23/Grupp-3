@@ -49,11 +49,21 @@
     display: flex;
     justify-content: space-between;
     margin-top:50px;
+    @media screen and (max-width: 650px){
+      display:flex;
+      flex-direction: column;
+      .types{
+        margin:21px 0;
+      }
+    }
     h4{
       margin-bottom:15px;
     }
     .byTags {
       width:400px;
+      @media screen and (max-width: 650px){
+        width:250px;
+      }
       .tags {
         margin:0 8px 8px 0;
         border-radius: 20px;
@@ -113,6 +123,9 @@
       border-radius: 4px;
       width:300px;
       text-indent:15px;
+      @media screen and (max-width: 650px){
+        width:200px;
+      }
     }
     #inputSearch::placeholder{
       color: #C8D3DC;
@@ -128,4 +141,3 @@
   font-size:35px;
   text-align: center;
 }
-//text
