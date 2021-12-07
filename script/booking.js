@@ -1,8 +1,12 @@
 let bookingStep1 = document.querySelector('.bookingStep1');
 let bookingStep2 = document.querySelector('.bookingStep2');
 let bookingStep3 = document.querySelector('.bookingStep3');
+const bookingStep1Content = document.querySelector('.bookingStep1Content');
+
 let roomTitle = document.querySelector('.roomTitle');
-let roomTitle2 = document.querySelector('.roomTitleStep2');
+const roomTitle2 = document.querySelector('.roomTitleStep2');
+const dateWarning = document.querySelector('.dateWarning');
+const createP = document.createElement('p');
 
 let inputDate = document.querySelector('#inputDate');
 let search = document.querySelector('#search');
@@ -25,7 +29,11 @@ const giveTitleAndTrigger = (event) => {
             let partsContainer = [];
             participant = splitgetParts.concat(partsContainer);
             participant.pop();
-        } else if (eventName === "submitBtnStep1" || eventName === 'submitBtnStep1FirstPage') {
+        }
+        //if (inputDate.value === '') {
+
+        //}
+        /*  else if (eventName === "submitBtnStep1" || eventName === 'submitBtnStep1FirstPage') {
             bookingStep1.style.display = "none";
             bookingStep2.style.display = "block";
             participantsDropDown();
@@ -36,10 +44,28 @@ const giveTitleAndTrigger = (event) => {
         } else {
             bookingStep3.style.display = "none";
         }
+        */
     }
     //Checks if selectTimes has any old values and removes them then gets time slots from booking API. 
-search.addEventListener('click', () => {
+search.addEventListener('click', (event) => {
     let result;
+    createP.innerHTML = 'Enter valid date';
+    bookingStep1Content.appendChild(createP);
+    let eventName = event.target.className;
+
+    if (inputDate.value === '') {
+
+    } else if (eventName === "submitBtnStep1" || eventName === 'submitBtnStep1FirstPage') {
+        bookingStep1.style.display = "none";
+        bookingStep2.style.display = "block";
+        participantsDropDown();
+        roomTitle2.innerHTML = `Book room - ${ titleName }`;
+    } else if (eventName === "submitBtnStep2") {
+        bookingStep2.style.display = "none";
+        bookingStep3.style.display = "block";
+    } else {
+        bookingStep3.style.display = "none";
+    }
     if (selectTimes.length !== 0) {
         while (selectTimes.options.length > 0) {
             selectTimes.remove(0);
@@ -120,3 +146,6 @@ async function postBooking() {
     })
     return response.json();
 }
+
+//1. När man klickar på Sökknappen ska ett felmeddelande visas OM inget datum är angett.
+//2.
