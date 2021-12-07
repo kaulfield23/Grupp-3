@@ -93,10 +93,8 @@
     @include desktop {}
 }
 .challenges-item:hover{
-    box-shadow:5px 10px 45px 20px gray;}
+    box-shadow:5px 5px 20px 5px gray;}
 .challenges-cta {
     @include challenge-ctas;
     margin: 2rem 0;
 }
-
-//text
