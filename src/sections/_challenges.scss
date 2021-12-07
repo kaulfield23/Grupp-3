@@ -16,7 +16,9 @@
     display: grid;
     grid-template-columns: repeat(3, 400px);
     justify-content: center;
+   
 }
+
 
 .challenges-type {
     display: none;
@@ -29,10 +31,12 @@
 .challenges-list {
     display: flex;
     height: 560px;
+   
     @include desktop {
         justify-content: center;
     }
 }
+
 
 .challenges-item {
     display: flex;
@@ -47,6 +51,8 @@
     &>*:not(img) {
         margin: 0 1rem;
     }
+    
+    
     .challenge-title {
         font-size: 25px;
         font-weight: normal;
@@ -86,7 +92,8 @@
     @include desktop {}
     @include desktop {}
 }
-
+.challenges-item:hover{
+    box-shadow:5px 10px 45px 20px gray;}
 .challenges-cta {
     @include challenge-ctas;
     margin: 2rem 0;
