@@ -13,16 +13,17 @@ export function printFilteredCard() {
       checkInput(card)
     );
   });
-  
-  const sortIcon = document.querySelectorAll('.sortIcon')
-  sortIcon.forEach((element) =>{
-      element.onclick = (event) => {
-    let sortType = event.target.getAttribute("sortType");
-          const container = document.querySelector("section.challenges");
-          container.innerHTML = "";
-          buildCardsForChallenges(sort(filtered,sortType));
-      }
-  })
+
+  //codes for new course for sorting filtered cards by name and rate
+  const sortBy = document.querySelector(".nameOrRate");
+  const sortIcon = document.querySelector(".sortIcon");
+
+  sortIcon.addEventListener("click", () => {
+    sortFunElement(filtered, sortDirection);
+  });
+  sortBy.addEventListener("change", () => {
+    sortFunElement(filtered, sortDirection);
+  });
   buildCardsForChallenges(filtered);
 }
 
