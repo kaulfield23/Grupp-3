@@ -130,8 +130,20 @@
         </div>
 
     </section>
-    <div class="showSelectedTags">
+    <div class="sort">
+        <div class="sortDirection">
+            <!-- <i class="fas fa-sort-amount-down-alt sortIcon" sortType="ascending"></i> -->
+            <i class="fas fa-sort-amount-down sortIcon"></i>
+        </div>
+        <div class="custom-select">
+            <select class="nameOrRate">
+              <option value="0">Sort by</option>
+              <option value="1" class="sortBy">Name</option>
+              <option value="2" class="sortBy">Rate</option>
+            </select>
+          </div>
     </div>
+    
     <!--challenge-cards-->
     <section class="challenges">
         <div class="challenge-all">
@@ -199,6 +211,7 @@
     </script>
 
     <script src="./script/secondPage.js"></script>
+    <script src="./script/filterFiles/sort.js"></script>
     <script type="module" src="./script/filterFiles/getCheckboxes.js"></script>
     <script type="module" src="./script/filterFiles/filterShowAndClose.js"></script>
     <script type="module" src="./script/filterFiles/getTags.js"></script>
