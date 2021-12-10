@@ -30,10 +30,21 @@ function buildCardsForChallenges(challenges) {
             let MaxParticipants = (newCard.querySelector(".maxParticipants").innerHTML = challenge.maxParticipants + " Participants");
             let Image = (newCard.querySelector(".challenge-picture").src = challenge.image);
             let Lables = (newCard.querySelector(".challenges-lable").innerHTML = challenge.labels);
+            let Icon = newCard.querySelector(".icon");
             let Btn2 = newCard.querySelector(".challenge-cta");
 
             //changes cards depending on "onsite" or "online".
-            if (Type == "onsite") { Btn2.innerHTML = "Book this room"; } else if (Type == "online") { Btn2.innerHTML = "Take this challenge online"; }
+             
+            for (let i = 0; i < challenges.length; i++) {
+                if (Type == "onsite") {
+                    Btn2.innerHTML = "Book this room";
+                    Icon.className = "fas fa-home";
+                }
+                else if (Type == "online") {
+                    Btn2.innerHTML = "Take this challenge online";
+                    Icon.className = "fas fa-desktop";
+                }
+            }
             //Makes the rating number a star.
             const starContainer = newCard.querySelector(".challenge-rating");
             for (let starIndex = 0; starIndex < 5; starIndex++) {
@@ -63,3 +74,10 @@ const filterClass = document.querySelector('.filterClass');
 if (filterClass) {
     init();
 }
+
+
+
+
+
+
+

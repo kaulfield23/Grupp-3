@@ -85,6 +85,13 @@
     }
     @include desktop {}
     @include desktop {}
+
+    .fa-home:before{
+     @include icon;
+    }
+    .fa-desktop:before{
+    @include icon;
+    }
 }
 
 .challenges-cta {
@@ -92,4 +99,8 @@
     margin: 2rem 0;
 }
 
-//text
+
+
+
+ 
+ 
