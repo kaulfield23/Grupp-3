@@ -58,8 +58,6 @@ const giveTitleAndTrigger = (event) => {
     }
 }
 
-
-
 //Checks if selectTimes has any old values and removes them then gets time slots from booking API. //Booking step 1
 search.addEventListener('click', () => {
     let result;
@@ -151,7 +149,6 @@ async function postBooking() {
             time: selectTimes.value,
             participants: parseInt(selectParticipants.value)
         })
-
     })
     return response.json();
 }
