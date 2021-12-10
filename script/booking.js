@@ -3,18 +3,31 @@ let bookingStep2 = document.querySelector('.bookingStep2');
 let bookingStep3 = document.querySelector('.bookingStep3');
 let roomTitle = document.querySelector('.roomTitle');
 let roomTitle2 = document.querySelector('.roomTitleStep2');
-
+const createP = document.createElement('p');
+const bookingStep1Content = document.querySelector('.bookingStep1Content');
 let inputDate = document.querySelector('#inputDate');
 let search = document.querySelector('#search');
 let originalUrl = 'https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=';
 let selectTimes = document.querySelector('#selectTimes');
 let option = document.querySelectorAll('option');
 
+let selectParticipants = document.querySelector('#inputParticipants');
+let name = document.querySelector('#name');
+let email = document.querySelector('#email');
+let url = 'https://lernia-sjj-assignments.vercel.app/api/booking/reservations';
+let phoneInput = document.querySelector('#phoneInput');
 
 let titleName;
 let participant = [];
+let isFilled;
+console.log(participant);
 //Opens booking-modal and gets title and participants from the chosen challenge
 const giveTitleAndTrigger = (event) => {
+    let isEmpty;
+    if (isFilled === false) {
+        isFilled = true;
+        return;
+    } else {
         let eventName = event.target.className;
         if (eventName === "challenge-cta") {
             titleName = event.target.parentNode.children[1].textContent;
@@ -30,14 +43,44 @@ const giveTitleAndTrigger = (event) => {
             bookingStep2.style.display = "block";
             participantsDropDown();
             roomTitle2.innerHTML = `Book room - ${ titleName }`;
-        } else if (eventName === "submitBtnStep2") {
-            bookingStep2.style.display = "none";
-            bookingStep3.style.display = "block";
+        } else
+        if (eventName === "submitBtnStep2") {
+            isEmpty = checkEmptyValue(isEmpty);
+            if (!isEmpty) {
+                bookingStep2.style.display = "none";
+                bookingStep3.style.display = "block";
+            }
         } else {
             bookingStep3.style.display = "none";
         }
+
+        return participant;
     }
+}
+
+//Checks if selectTimes has any old values and removes them then gets time slots from booking API. //Booking step 1
+search.addEventListener('click', () => {
+    let result;
+    if (inputDate.value === '') {
+        isFilled = false;
+        bookingStep1.style.display = "block";
+        bookingStep2.style.display = "none";
+        bookingStep1Content.appendChild(createP);
+        createP.innerHTML = 'Enter valid date';
+    } else {
+        bookingStep1.style.display = 'none';
+        bookingStep2.style.display = 'block';
+        createP.innerHTML = '';
+        result = originalUrl.concat(inputDate.value);
+        fetch(result)
+            .then(res => res.json())
+            .then(data => renderAvailableSlots(data.slots))
+    }
+
+});
+
     //Checks if selectTimes has any old values and removes them then gets time slots from booking API. 
+
 search.addEventListener('click', () => {
     let result;
     if (selectTimes.length !== 0) {
@@ -45,11 +88,6 @@ search.addEventListener('click', () => {
             selectTimes.remove(0);
         }
     }
-    result = originalUrl.concat(inputDate.value);
-    fetch(result)
-        .then(res => res.json())
-        .then(data => renderAvailableSlots(data.slots))
-
     return result;
 })
 
@@ -76,7 +114,6 @@ function participantsDropDown() {
             inputParticipants.remove(0);
         }
     }
-    //let x = 
     participant.splice(1, 1);
     for (i = parseInt(participant[0]); i <= parseInt(participant[1]); i++) {
         let opt = i;
@@ -92,34 +129,44 @@ function participantsDropDown() {
 let postBookingBtn = document.querySelector('#postBookingBtn');
 postBookingBtn.addEventListener('click', postBooking);
 async function postBooking() {
-    const selectParticipants = document.querySelector('#inputParticipants');
-    let name = document.querySelector('#name');
-    let email = document.querySelector('#email');
-    let inputDate = document.querySelector('#inputDate');
-    let selectTimes = document.querySelector('#selectTimes');
-    let url = 'https://lernia-sjj-assignments.vercel.app/api/booking/reservations';
-
+    selectParticipants;
+    name;
+    email;
+    inputDate;
+    selectTimes;
+    url;
+    phoneInput;
     const response = await fetch(url, {
-            method: 'POST',
-            mode: 'cors',
-            credential: 'same-origin',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            redirect: 'follow',
-            referrerPolicy: 'no-referrer',
-            body: JSON.stringify({
-                name: name.value,
-                email: email.value,
-                date: inputDate.value,
-                time: selectTimes.value,
-                participants: parseInt(selectParticipants.value)
-            })
-
-        }) //.then(res => {
+        method: 'POST',
+        mode: 'cors',
+        credential: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify({
+            name: name.value,
+            //phone: phoneInput.value,
+            email: email.value,
+            date: inputDate.value,
+            time: selectTimes.value,
+            participants: parseInt(selectParticipants.value)
+        })
+    })
     return response.json();
-    //}).then(data => console.log(data)).catch(error => console.log('ERROR'))
 }
-
-//Left to do:
-// -Prevent step2 if inputdate is invalid
+//Function for course 'Arbetsmetodik'
+const userInput = document.querySelectorAll('.userInput')
+const checkEmptyValue = (isEmpty) => {
+    isEmpty = false;
+    userInput.forEach((element) => {
+        if (element.value.length === 0) {
+            isEmpty = true;
+        }
+    })
+    if (isEmpty) {
+        alert('You must enter the input')
+    }
+    return isEmpty
+}

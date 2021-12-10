@@ -8,6 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/07a95dbd5e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="./src/main.css">
+
+    <meta property="og:url" content="https://github.com/Erm0es/Grupp-3/deployments/activity_log?environment=github-pages">
+    <meta property="og:type" content="/">
+    <meta property="og:title" content="Hacker Escape Rooms"> 
+    <meta property="og:description" content="Welcome to Hacker Escape Rooms. Book your room right now">
+    <meta property="og:image" content="/">
 </head>
 
 <body>
@@ -93,11 +99,15 @@
             <h1 class="roomTitleStep2"></h1>
             <div class="nameInput">
                 <label for="nameInput">Name</label><br>
-                <input type="name" name="nameInput" id="name" class="nameInput"><br>
+                <input type="name" name="nameInput" id="name" class="nameInput userInput"><br>
+            </div>
+            <div class="phoneInput">
+                <label for="phone">Phone Number</label><br>
+                <input type="text" name="phone" class="userInput" id="phoneInput">
             </div>
             <div class="emailInput">
                 <label for="emailInput">E-mail</label><br>
-                <input type="email" id="email"><br>
+                <input type="email" class="userInput" id="email"><br>
             </div>
             <div class="inputTime">
                 <label for="inputTime">What time?</label><br>
@@ -195,6 +205,8 @@
     <script type="module" src="./script/firstPage.js"></script>
     <script src="./script/secondPage.js"></script>
     <script src="./script/booking.js"></script>
+
+ 
 </body>
 
 </html>

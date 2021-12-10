@@ -1,26 +1,26 @@
 async function getChallenges() {
-    const url = "https://lernia-sjj-assignments.vercel.app/api/challenges";
-    const response = await fetch(url);
-    const data = await response.json();
-    return data.challenges;
+  const url = "https://lernia-sjj-assignments.vercel.app/api/challenges";
+  const response = await fetch(url);
+  const data = await response.json();
+  return data.challenges;
 }
 let initialCard;
 
 function buildCardsForChallenges(challenges) {
-    const container = document.querySelector("section.challenges");
-    container.innerHTML = "";
-    if (challenges.length === 0) {
-        const noMatch = document.createElement("span");
-        noMatch.className = "noMatch";
-        noMatch.innerHTML = "No matching Challenges";
-        container.style.padding = "150px";
-        container.append(noMatch);
-    } else {
-        //loop for cards and information.
-        for (let i = 0; i < challenges.length; i++) {
-            let challenge = challenges[i];
-            let newCard = initialCard.cloneNode(true);
-            container.append(newCard);
+  const container = document.querySelector("section.challenges");
+  container.innerHTML = "";
+  if (challenges.length === 0) {
+    const noMatch = document.createElement("span");
+    noMatch.className = "noMatch";
+    noMatch.innerHTML = "No matching Challenges";
+    container.style.padding = "150px";
+    container.append(noMatch);
+  } else {
+    //loop for cards and information.
+    for (let i = 0; i < challenges.length; i++) {
+      let challenge = challenges[i];
+      let newCard = initialCard.cloneNode(true);
+      container.append(newCard);
 
             //ändrar värdet i deklarationerna.
             let Type = (newCard.querySelector(".challenges-type").innerHTML = challenge.type);
@@ -59,22 +59,35 @@ function buildCardsForChallenges(challenges) {
                 starContainer.append(star);
             }
         }
+        starContainer.append(star);
+      }
     }
+  }
 }
 
 async function init() {
-    initialCard = document.querySelector(".challenge-all");
-    initialCard.remove();
+  initialCard = document.querySelector(".challenge-all");
+  initialCard.remove();
 
-    const data = await getChallenges();
-    buildCardsForChallenges(data);
+  const data = await getChallenges();
+  const sortIcon = document.querySelector(".sortIcon");
+  const sortBy = document.querySelector(".nameOrRate");
+
+  //codes for new course for sorting filtered cards by name and rate
+  sortIcon.addEventListener("click", () => {
+    changeDirection();
+    sortFunElement(data, sortDirection);
+  });
+  sortBy.addEventListener("change", () => {
+    sortFunElement(data, sortDirection);
+  });
+  buildCardsForChallenges(data);
 }
 
-const filterClass = document.querySelector('.filterClass');
+const filterClass = document.querySelector(".filterClass");
 if (filterClass) {
     init();
 }
-
 
 
 
