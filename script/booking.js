@@ -76,7 +76,11 @@ search.addEventListener('click', () => {
             .then(res => res.json())
             .then(data => renderAvailableSlots(data.slots))
     }
+
+});
+
     //Checks if selectTimes has any old values and removes them then gets time slots from booking API. 
+
 search.addEventListener('click', () => {
     let result;
     if (selectTimes.length !== 0) {
