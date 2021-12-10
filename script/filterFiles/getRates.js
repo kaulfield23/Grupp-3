@@ -8,11 +8,10 @@ export const rate = {
 const stars = document.querySelectorAll('.star')
 stars.forEach((element) =>{
   element.addEventListener('click', (event) =>{
-    let setInputNumAndLimit = event.target.getAttribute('rate').split('-');
-    let limit = setInputNumAndLimit[0];
-    let inputNum = parseInt(setInputNumAndLimit[1]);
+    let rateAttribute = event.target.getAttribute('rate').split('-');
+    let limit = rateAttribute[0];
+    let inputNum = parseInt(rateAttribute[1]);
   
-
     if (inputNum == 1 && rate[limit] == 1) {
       inputNum = 0;
     }
