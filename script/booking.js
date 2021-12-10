@@ -5,7 +5,6 @@ let roomTitle = document.querySelector('.roomTitle');
 let roomTitle2 = document.querySelector('.roomTitleStep2');
 const createP = document.createElement('p');
 const bookingStep1Content = document.querySelector('.bookingStep1Content');
-
 let inputDate = document.querySelector('#inputDate');
 let search = document.querySelector('#search');
 let originalUrl = 'https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=';
@@ -39,9 +38,7 @@ const giveTitleAndTrigger = (event) => {
             let partsContainer = [];
             participant = splitgetParts.concat(partsContainer);
             participant.pop();
-
         } else if (eventName === "submitBtnStep1" || eventName === 'submitBtnStep1FirstPage') {
-
             bookingStep1.style.display = "none";
             bookingStep2.style.display = "block";
             participantsDropDown();
@@ -56,6 +53,7 @@ const giveTitleAndTrigger = (event) => {
         } else {
             bookingStep3.style.display = "none";
         }
+
         return participant;
     }
 }
@@ -78,6 +76,10 @@ search.addEventListener('click', () => {
             .then(res => res.json())
             .then(data => renderAvailableSlots(data.slots))
     }
+});
+//Checks if selectTimes has any old values and removes them then gets time slots from booking API. 
+search.addEventListener('click', () => {
+    let result;
     if (selectTimes.length !== 0) {
         while (selectTimes.options.length > 0) {
             selectTimes.remove(0);
@@ -153,7 +155,6 @@ async function postBooking() {
 }
 //Function for course 'Arbetsmetodik'
 const userInput = document.querySelectorAll('.userInput')
-
 const checkEmptyValue = (isEmpty) => {
     isEmpty = false;
     userInput.forEach((element) => {
