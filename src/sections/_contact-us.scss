@@ -1,0 +1,38 @@
+.esc{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+.contactUsContent{
+    font-size: 18px;
+    width: 50%;
+    background-color: $c-grey;
+    display:block;
+    justify-self: center;
+    border-style: solid;
+    position: relative;
+    left:25%;
+    
+    p{
+        padding:40px;
+    }  
+}
+
+.contact{
+    display: flex;
+    justify-content: center;
+    margin-top:100px;
+    font-size: 30px;
+ }
+
+.icons-content{
+    display: flex;
+    padding: 0px 700px;
+    justify-content: space-between;
+    font-size: 40px;
+    margin-top: 50px;
+}
+
