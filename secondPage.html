@@ -34,9 +34,8 @@
                 <label for="step1Date">
                 Date
             </label><br>
-                <input type="date" name="step1Date" id="inputDate" required>
+                <input type="date" name="step1Date" id="inputDate">
             </div>
-            <div class="dateWarning"></div>
         </div>
         <div class="submitStep1-container">
             <a href="#" class="submitBtnStep1" id="search" onclick="giveTitleAndTrigger(event)">Submit</a>
@@ -47,15 +46,15 @@
             <h1 class="roomTitleStep2"></h1>
             <div class="nameInput">
                 <label for="nameInput">Name</label><br>
-                <input type="name" name="nameInput" id="name" class="nameInput"><br>
+                <input type="name" name="nameInput" id="name" class="nameInput userInput"><br>
             </div>
             <div class="phoneInput">
                 <label for="phone">Phone Number</label><br>
-                <input type="text" name="phone">
+                <input type="text" class="userInput" name="phone">
             </div>
             <div class="emailInput">
                 <label for="emailInput">E-mail</label><br>
-                <input type="email" id="email"><br>
+                <input type="email" class="userInput" id="email"><br>
             </div>
             <div class="inputTime">
                 <label for="inputTime">What time?</label><br>
@@ -131,8 +130,20 @@
         </div>
 
     </section>
-    <div class="showSelectedTags">
+    <div class="sort">
+        <div class="sortDirection">
+            <!-- <i class="fas fa-sort-amount-down-alt sortIcon" sortType="ascending"></i> -->
+            <i class="fas fa-sort-amount-down sortIcon"></i>
+        </div>
+        <div class="custom-select">
+            <select class="nameOrRate">
+              <option value="0">Sort by</option>
+              <option value="1" class="sortBy">Name</option>
+              <option value="2" class="sortBy">Rate</option>
+            </select>
+          </div>
     </div>
+    
     <!--challenge-cards-->
     <section class="challenges">
         <div class="challenge-all">
@@ -141,7 +152,8 @@
             <ul class="challenges-list">
                 <li class="challenges-item">
                     <img class="challenge-picture">
-                    <h3 class="challenge-title">FULTKORT</h3>
+                    <div class = "icon"></div>
+                    <h3 class="challenge-title"></h3>
                     <div class="challenge-meta">
                         <ul class="challenge-rating"></ul>
                         <div class="participants">
@@ -200,6 +212,7 @@
     </script>
 
     <script src="./script/secondPage.js"></script>
+    <script src="./script/filterFiles/sort.js"></script>
     <script type="module" src="./script/filterFiles/getCheckboxes.js"></script>
     <script type="module" src="./script/filterFiles/filterShowAndClose.js"></script>
     <script type="module" src="./script/filterFiles/getTags.js"></script>

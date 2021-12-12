@@ -11,7 +11,7 @@
 
     <meta property="og:url" content="https://github.com/Erm0es/Grupp-3/deployments/activity_log?environment=github-pages">
     <meta property="og:type" content="/">
-    <meta property="og:title" content="Hacker Escape Rooms">
+    <meta property="og:title" content="Hacker Escape Rooms"> 
     <meta property="og:description" content="Welcome to Hacker Escape Rooms. Book your room right now">
     <meta property="og:image" content="/">
 </head>
@@ -62,6 +62,7 @@
             <ul class="challenges-list">
                 <li class="challenges-item">
                     <img class="challenge-picture">
+                    <div class = "icon"></div>
                     <h3 class="challenge-title"></h3>
                     <div class="challenge-meta">
                         <ul class="challenge-rating"></ul>
@@ -86,7 +87,7 @@
                 <label for="step1Date">
                         Date
                     </label><br>
-                <input type="date" name="step1Date" id="inputDate" required>
+                <input type="date" name="step1Date" id="inputDate">
             </div>
         </div>
         <div class="submitStep1-container">
@@ -98,15 +99,15 @@
             <h1 class="roomTitleStep2"></h1>
             <div class="nameInput">
                 <label for="nameInput">Name</label><br>
-                <input type="name" name="nameInput" id="name" class="nameInput"><br>
+                <input type="name" name="nameInput" id="name" class="nameInput userInput"><br>
             </div>
             <div class="phoneInput">
                 <label for="phone">Phone Number</label><br>
-                <input type="text" name="phone" id="phoneInput">
+                <input type="text" name="phone" class="userInput" id="phoneInput">
             </div>
             <div class="emailInput">
                 <label for="emailInput">E-mail</label><br>
-                <input type="email" id="email"><br>
+                <input type="email" class="userInput" id="email"><br>
             </div>
             <div class="inputTime">
                 <label for="inputTime">What time?</label><br>
@@ -204,6 +205,8 @@
     <script type="module" src="./script/firstPage.js"></script>
     <script src="./script/secondPage.js"></script>
     <script src="./script/booking.js"></script>
+
+ 
 </body>
 
 </html>

@@ -8,5 +8,7 @@ inputSearch.addEventListener('keyup', () => {
     //     const regex = new RegExp(`^${inputSearchContainer}`, 'gi');
     //     return state.title.match(regex) || state.description.match(regex);
     // });
-    printFilteredCard();
+    if(inputText.length >= 3){
+        printFilteredCard();
+    }
 })

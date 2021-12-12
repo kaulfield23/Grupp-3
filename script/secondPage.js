@@ -30,10 +30,19 @@ function buildCardsForChallenges(challenges) {
             let MaxParticipants = (newCard.querySelector(".maxParticipants").innerHTML = challenge.maxParticipants + " Participants");
             let Image = (newCard.querySelector(".challenge-picture").src = challenge.image);
             let Lables = (newCard.querySelector(".challenges-lable").innerHTML = challenge.labels);
+            let Icon = newCard.querySelector(".icon");
             let Btn2 = newCard.querySelector(".challenge-cta");
 
             //changes cards depending on "onsite" or "online".
-            if (Type == "onsite") { Btn2.innerHTML = "Book this room"; } else if (Type == "online") { Btn2.innerHTML = "Take this challenge online"; }
+            if (Type == "onsite") {
+                Btn2.innerHTML = "Book this room";
+                Icon.className = "fas fa-home";
+            }
+            else if (Type == "online") {
+                Btn2.innerHTML = "Take this challenge online";
+                Icon.className = "fas fa-desktop";
+            }
+
             //Makes the rating number a star.
             const starContainer = newCard.querySelector(".challenge-rating");
             for (let starIndex = 0; starIndex < 5; starIndex++) {
@@ -48,18 +57,38 @@ function buildCardsForChallenges(challenges) {
                 starContainer.append(star);
             }
         }
+        //starContainer.append(star);
     }
 }
+
+
 
 async function init() {
     initialCard = document.querySelector(".challenge-all");
     initialCard.remove();
 
     const data = await getChallenges();
+    const sortIcon = document.querySelector(".sortIcon");
+    const sortBy = document.querySelector(".nameOrRate");
+
+    //codes for new course for sorting filtered cards by name and rate
+    sortIcon.addEventListener("click", () => {
+        changeDirection();
+        sortFunElement(data, sortDirection);
+    });
+    sortBy.addEventListener("change", () => {
+        sortFunElement(data, sortDirection);
+    });
     buildCardsForChallenges(data);
 }
 
-const filterClass = document.querySelector('.filterClass');
+const filterClass = document.querySelector(".filterClass");
 if (filterClass) {
     init();
 }
+
+
+
+
+
+
