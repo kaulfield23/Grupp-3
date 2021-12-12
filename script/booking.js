@@ -30,10 +30,10 @@ const giveTitleAndTrigger = (event) => {
     } else {
         let eventName = event.target.className;
         if (eventName === "challenge-cta") {
-            titleName = event.target.parentNode.children[1].textContent;
+            titleName = event.target.parentNode.children[2].textContent;
             roomTitle.innerHTML = `Book room - ${ titleName }`;
             bookingStep1.style.display = "block";
-            let getTitle = event.target.parentNode.children[2].lastElementChild.innerText;
+            let getTitle = event.target.parentNode.children[3].lastElementChild.innerText;
             let splitgetParts = getTitle.split(' ');
             let partsContainer = [];
             participant = splitgetParts.concat(partsContainer);

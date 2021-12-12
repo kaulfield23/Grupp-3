@@ -98,3 +98,10 @@
   border-radius: 5px;
  margin-bottom: 50px;     
 }
+
+@mixin icon{
+  position: relative;
+  font-size: 30px;
+  bottom: 260px;
+  left:300px;
+}
