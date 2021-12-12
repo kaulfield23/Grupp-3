@@ -91,6 +91,13 @@
     }
     @include desktop {}
     @include desktop {}
+
+    .fa-home:before{
+     @include icon;
+    }
+    .fa-desktop:before{
+    @include icon;
+    }
 }
 .challenges-item:hover{
     box-shadow:5px 5px 20px 5px gray;}
@@ -98,3 +105,4 @@
     @include challenge-ctas;
     margin: 2rem 0;
 }
+
