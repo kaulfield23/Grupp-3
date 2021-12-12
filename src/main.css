@@ -3,6 +3,7 @@ html {
   user-select: none;
 }
 
+
 * {
   margin: 0;
   padding: 0;
@@ -957,6 +958,7 @@ img {
   }
 }
 
+
 .esc {
   display: flex;
   justify-content: center;
@@ -995,3 +997,4 @@ img {
 }
 
 /*# sourceMappingURL=main.css.map */
+
