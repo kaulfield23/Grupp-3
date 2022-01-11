@@ -1,7 +1,7 @@
 ## The first group project from school (Webbutveckling - JavaScript course)
 This is the very first group project that I tried with other people.
 
-##What I learned
+## What I learned
 
 1.Learned how to use git/github
 2.How to fetch data with async
