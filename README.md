@@ -7,6 +7,10 @@ This is the very first group project that I tried with other people.
 * How to fetch data with async
 
 
+## What I made
+
+* Filter of all challenge cards
+* Sort function
 
 ==============================================================================
 
